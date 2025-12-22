@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Código Penal Militar para Roleplay - 500 Artigos completos com pesquisa e navegação por seções">
+    <title>Código Penal Militar - Roleplay | 500 Artigos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(222.2, 84%, 4.9%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(222.2, 84%, 4.9%);
+            --primary: hsl(222.2, 47.4%, 11.2%);
+            --primary-foreground: hsl(210, 40%, 98%);
+            --secondary: hsl(210, 40%, 96.1%);
+            --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+            --muted: hsl(210, 40%, 96.1%);
+            --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+            --accent: hsl(210, 40%, 96.1%);
+            --accent-foreground: hsl(222.2, 47.4%, 11.2%);
+            --border: hsl(214.3, 31.8%, 91.4%);
+            --radius: 0.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            background-color: var(--card);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .header-text {
+            text-align: center;
+        }
+
+        .header-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 768px) {
+            .header-text h1 {
+                font-size: 1.875rem;
+            }
+        }
+
+        .header-text p {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Search Bar */
+        .search-section {
+            border-bottom: 1px solid var(--border);
+            background-color: hsl(210, 40%, 96.1%, 0.5);
+            position: sticky;
+            top: 97px;
+            z-index: 40;
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 672px;
+            margin: 0 auto;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: var(--muted-foreground);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--background);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px hsl(222.2, 47.4%, 11.2%, 0.1);
+        }
+
+        .search-results-count {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-top: 0.5rem;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+
+        .grid-layout {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-layout {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .grid-layout {
+                grid-template-columns: 1fr 3fr;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                position: sticky;
+                top: 180px;
+                max-height: calc(100vh - 200px);
+                overflow-y: auto;
+            }
+        }
+
+        .sidebar-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-title svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .sections-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .section-btn {
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .section-btn:hover {
+            background-color: var(--accent);
+        }
+
+        .section-btn.active {
+            background-color: var(--accent);
+            color: var(--accent-foreground);
+        }
+
+        .section-btn svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .section-btn span {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .section-description {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            padding: 0 0 0.5rem 2.25rem;
+        }
+
+        /* Main Content */
+        main {
+            min-height: 400px;
+        }
+
+        /* Welcome Card */
+        .welcome-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .welcome-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            color: var(--muted-foreground);
+        }
+
+        .welcome-card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-card p {
+            color: var(--muted-foreground);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Article List */
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .article-card {
+            width: 100%;
+            text-align: left;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .article-card:hover {
+            background-color: var(--accent);
+        }
+
+        .article-card-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .article-card-main {
+            flex: 1;
+        }
+
+        .article-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .article-badge {
+            background-color: var(--secondary);
+            color: var(--secondary-foreground);
+            padding: 0.125rem 0.5rem;
+            border-radius: var(--radius);
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .article-title {
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .article-card:hover .article-title {
+            color: var(--primary);
+        }
+
+        .article-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-card-arrow {
+            width: 20px;
+            height: 20px;
+            color: var(--muted-foreground);
+            flex-shrink: 0;
+            transition: color 0.2s;
+        }
+
+        .article-card:hover .article-card-arrow {
+            color: var(--foreground);
+        }
+
+        /* Article Detail */
+        .article-detail {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted-foreground);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--foreground);
+        }
+
+        .back-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .article-detail-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-detail-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-detail-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .article-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted-foreground);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-section-content {
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+
+        .article-penalty {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--primary);
+            background-color: var(--secondary);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius);
+        }
+
+        .keywords-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .keyword-tag {
+            background-color: var(--muted);
+            color: var(--muted-foreground);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        /* No Results */
+        .no-results {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted-foreground);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Hidden */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Scrollbar */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background-color: var(--border);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M32 12 L32 52 M22 22 L42 22 M22 32 L42 32 M22 42 L42 42" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="header-text">
+                <h1 class="font-serif">CÓDIGO PENAL MILITAR</h1>
+                <p>Roleplay • 500 Artigos</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-wrapper">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Pesquisar por artigo, palavra-chave ou número...">
+            </div>
+            <p class="search-results-count hidden" id="searchResultsCount"></p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="grid-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h2 class="sidebar-title font-serif">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="M7 21h10"/>
+                        <path d="M12 3v18"/>
+                        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+                    </svg>
+                    Seções
+                </h2>
+                <nav class="sections-nav" id="sectionsNav"></nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main id="mainContent">
+                <!-- Welcome Card (default) -->
+                <div class="welcome-card" id="welcomeCard">
+                    <svg class="welcome-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
+                        <path d="M7 21h10"/>
+                        <path d="M12 3v18"/>
+                        <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+                    </svg>
+                    <h2 class="font-serif">Código Penal Militar RP</h2>
+                    <p>Selecione uma seção à esquerda ou use a barra de pesquisa para encontrar artigos específicos.</p>
+                </div>
+
+                <!-- Articles List -->
+                <div class="articles-list hidden" id="articlesList"></div>
+
+                <!-- Article Detail -->
+                <div class="article-detail hidden" id="articleDetail"></div>
+
+                <!-- No Results -->
+                <div class="no-results hidden" id="noResults"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Código Penal Militar • Uso exclusivo para Roleplay</p>
+    </footer>
+
+    <script>
+        // ============= DADOS - SEÇÕES =============
+        const sections = [
+            { id: 1, title: "Título I - Dos Crimes Contra a Autoridade e Disciplina Militar", description: "Artigos 1 a 50" },
+            { id: 2, title: "Título II - Dos Crimes Contra o Serviço e o Dever Militar", description: "Artigos 51 a 100" },
+            { id: 3, title: "Título III - Dos Crimes Contra a Administração Militar", description: "Artigos 101 a 150" },
+            { id: 4, title: "Título IV - Dos Crimes Contra a Pessoa", description: "Artigos 151 a 200" },
+            { id: 5, title: "Título V - Dos Crimes Contra o Patrimônio", description: "Artigos 201 a 250" },
+            { id: 6, title: "Título VI - Dos Crimes Contra a Segurança da Unidade", description: "Artigos 251 a 300" },
+            { id: 7, title: "Título VII - Dos Crimes Contra a Ordem Pública", description: "Artigos 301 a 350" },
+            { id: 8, title: "Título VIII - Dos Crimes de Corrupção e Abuso de Poder", description: "Artigos 351 a 400" },
+            { id: 9, title: "Título IX - Dos Crimes de Traição e Espionagem", description: "Artigos 401 a 450" },
+            { id: 10, title: "Título X - Das Disposições Gerais e Agravantes", description: "Artigos 451 a 500" },
+        ];
+
+        // ============= DADOS - ARTIGOS (500 ARTIGOS) =============
+        const articles = [
+            // TÍTULO I - Dos Crimes Contra a Autoridade e Disciplina Militar (1-50)
+            { id: 1, title: "Insubordinação", description: "Recusar-se a cumprir ordem direta de superior hierárquico em situação de serviço.", penalty: "Detenção de 30 a 90 dias", keywords: ["insubordinação", "ordem", "superior", "recusa", "hierarquia"], sectionId: 1 },
+            { id: 2, title: "Desrespeito a Superior", description: "Proferir palavras ou gestos ofensivos contra superior hierárquico.", penalty: "Detenção de 15 a 60 dias", keywords: ["desrespeito", "ofensa", "superior", "gestos", "palavras"], sectionId: 1 },
+            { id: 3, title: "Desacato", description: "Desacatar superior hierárquico em público ou durante formação.", penalty: "Detenção de 45 a 120 dias", keywords: ["desacato", "público", "formação", "superior"], sectionId: 1 },
+            { id: 4, title: "Motim", description: "Reunir-se com dois ou mais militares para resistir a ordem legal ou atacar autoridade.", penalty: "Detenção de 90 a 180 dias", keywords: ["motim", "reunião", "resistência", "ataque", "autoridade"], sectionId: 1 },
+            { id: 5, title: "Revolta", description: "Participar de levante armado contra autoridade militar constituída.", penalty: "Detenção de 180 a 365 dias", keywords: ["revolta", "levante", "armado", "autoridade"], sectionId: 1 },
+            { id: 6, title: "Conspiração", description: "Planejar ou participar de conspiração contra comando ou estrutura militar.", penalty: "Detenção de 120 a 240 dias", keywords: ["conspiração", "planejamento", "comando", "estrutura"], sectionId: 1 },
+            { id: 7, title: "Incitação à Desobediência", description: "Incitar outros militares a desobedecer ordens ou regulamentos.", penalty: "Detenção de 60 a 150 dias", keywords: ["incitação", "desobediência", "ordens", "regulamentos"], sectionId: 1 },
+            { id: 8, title: "Violência Contra Superior", description: "Praticar violência física contra superior hierárquico.", penalty: "Detenção de 90 a 270 dias", keywords: ["violência", "física", "superior", "agressão"], sectionId: 1 },
+            { id: 9, title: "Ameaça a Superior", description: "Ameaçar superior com palavras, gestos ou armas.", penalty: "Detenção de 45 a 120 dias", keywords: ["ameaça", "superior", "armas", "intimidação"], sectionId: 1 },
+            { id: 10, title: "Desobediência Qualificada", description: "Desobedecer ordem em situação de emergência ou combate.", penalty: "Detenção de 90 a 200 dias", keywords: ["desobediência", "emergência", "combate", "qualificada"], sectionId: 1 },
+            { id: 11, title: "Recusa de Obediência", description: "Recusar-se expressamente a executar ordem legal.", penalty: "Detenção de 30 a 75 dias", keywords: ["recusa", "obediência", "ordem", "legal"], sectionId: 1 },
+            { id: 12, title: "Oposição à Ordem de Sentinela", description: "Opor-se às determinações de sentinela em serviço.", penalty: "Detenção de 20 a 60 dias", keywords: ["oposição", "sentinela", "determinações", "serviço"], sectionId: 1 },
+            { id: 13, title: "Resistência Passiva", description: "Deixar de cumprir ordens através de inércia proposital.", penalty: "Detenção de 15 a 45 dias", keywords: ["resistência", "passiva", "inércia", "omissão"], sectionId: 1 },
+            { id: 14, title: "Desrespeito a Símbolo Nacional", description: "Desrespeitar bandeira, hino ou símbolo nacional em cerimônia.", penalty: "Detenção de 30 a 90 dias", keywords: ["bandeira", "hino", "símbolo", "cerimônia", "desrespeito"], sectionId: 1 },
+            { id: 15, title: "Falsa Identidade Hierárquica", description: "Usar patente ou posto que não possui.", penalty: "Detenção de 60 a 150 dias", keywords: ["identidade", "patente", "posto", "falsidade"], sectionId: 1 },
+            { id: 16, title: "Usurpação de Função", description: "Exercer função de comando sem autorização.", penalty: "Detenção de 45 a 120 dias", keywords: ["usurpação", "função", "comando", "autorização"], sectionId: 1 },
+            { id: 17, title: "Publicação Ofensiva", description: "Publicar material que ofenda a instituição ou superiores.", penalty: "Detenção de 30 a 90 dias", keywords: ["publicação", "ofensa", "instituição", "material"], sectionId: 1 },
+            { id: 18, title: "Crítica Pública Indevida", description: "Criticar publicamente decisões do comando sem autorização.", penalty: "Detenção de 20 a 60 dias", keywords: ["crítica", "pública", "comando", "decisões"], sectionId: 1 },
+            { id: 19, title: "Manifestação Política", description: "Participar de manifestação política usando uniforme ou identificação militar.", penalty: "Detenção de 30 a 90 dias", keywords: ["manifestação", "política", "uniforme", "identificação"], sectionId: 1 },
+            { id: 20, title: "Formação de Grupo Dissidente", description: "Formar ou participar de grupo contrário aos interesses da unidade.", penalty: "Detenção de 60 a 150 dias", keywords: ["grupo", "dissidente", "formação", "unidade"], sectionId: 1 },
+            { id: 21, title: "Desobediência em Patrulha", description: "Desobedecer ordens durante patrulhamento.", penalty: "Detenção de 45 a 120 dias", keywords: ["patrulha", "desobediência", "ordens", "patrulhamento"], sectionId: 1 },
+            { id: 22, title: "Violência Contra Oficial de Dia", description: "Praticar violência contra oficial de dia ou de serviço.", penalty: "Detenção de 90 a 200 dias", keywords: ["violência", "oficial", "dia", "serviço"], sectionId: 1 },
+            { id: 23, title: "Ofensa à Honra de Superior", description: "Ofender a honra pessoal de superior hierárquico.", penalty: "Detenção de 30 a 90 dias", keywords: ["honra", "ofensa", "pessoal", "superior"], sectionId: 1 },
+            { id: 24, title: "Calúnia Contra Superior", description: "Atribuir falsamente crime a superior.", penalty: "Detenção de 45 a 135 dias", keywords: ["calúnia", "crime", "falso", "superior"], sectionId: 1 },
+            { id: 25, title: "Difamação de Superior", description: "Difamar superior perante terceiros.", penalty: "Detenção de 30 a 90 dias", keywords: ["difamação", "terceiros", "superior", "reputação"], sectionId: 1 },
+            { id: 26, title: "Injúria a Superior", description: "Proferir injúria contra superior.", penalty: "Detenção de 20 a 60 dias", keywords: ["injúria", "superior", "ofensa", "verbal"], sectionId: 1 },
+            { id: 27, title: "Coação Contra Subordinado", description: "Coagir subordinado a praticar ato ilegal.", penalty: "Detenção de 60 a 150 dias", keywords: ["coação", "subordinado", "ilegal", "ato"], sectionId: 1 },
+            { id: 28, title: "Abuso de Autoridade sobre Subordinado", description: "Abusar de autoridade causando dano a subordinado.", penalty: "Detenção de 45 a 120 dias", keywords: ["abuso", "autoridade", "subordinado", "dano"], sectionId: 1 },
+            { id: 29, title: "Desprezo por Inferior", description: "Tratar inferior com desprezo ou humilhação injustificada.", penalty: "Detenção de 15 a 45 dias", keywords: ["desprezo", "inferior", "humilhação", "tratamento"], sectionId: 1 },
+            { id: 30, title: "Rigor Excessivo", description: "Aplicar punição desproporcional ou cruel a subordinado.", penalty: "Detenção de 60 a 180 dias", keywords: ["rigor", "punição", "desproporcional", "cruel"], sectionId: 1 },
+            { id: 31, title: "Omissão de Apoio", description: "Deixar de prestar apoio a companheiro em situação de risco.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "apoio", "companheiro", "risco"], sectionId: 1 },
+            { id: 32, title: "Quebra de Continência", description: "Deixar de prestar continência devida a superior.", penalty: "Detenção de 5 a 20 dias", keywords: ["continência", "superior", "saudação", "protocolo"], sectionId: 1 },
+            { id: 33, title: "Quebra de Postura", description: "Manter postura inadequada durante formação ou cerimônia.", penalty: "Detenção de 5 a 15 dias", keywords: ["postura", "formação", "cerimônia", "inadequada"], sectionId: 1 },
+            { id: 34, title: "Falta de Compostura", description: "Comportar-se de forma inadequada em ambiente militar.", penalty: "Detenção de 10 a 30 dias", keywords: ["compostura", "comportamento", "inadequado", "ambiente"], sectionId: 1 },
+            { id: 35, title: "Tumulto em Formação", description: "Causar tumulto durante formação ou reunião militar.", penalty: "Detenção de 20 a 60 dias", keywords: ["tumulto", "formação", "reunião", "desordem"], sectionId: 1 },
+            { id: 36, title: "Perturbação de Ordem", description: "Perturbar a ordem estabelecida em área militar.", penalty: "Detenção de 15 a 45 dias", keywords: ["perturbação", "ordem", "área", "militar"], sectionId: 1 },
+            { id: 37, title: "Desrespeito a Guarda", description: "Desrespeitar militares em serviço de guarda.", penalty: "Detenção de 20 a 60 dias", keywords: ["guarda", "desrespeito", "serviço", "militar"], sectionId: 1 },
+            { id: 38, title: "Invasão de Área Restrita sem Autorização", description: "Invadir área restrita sem a devida autorização.", penalty: "Detenção de 30 a 90 dias", keywords: ["invasão", "área", "restrita", "autorização"], sectionId: 1 },
+            { id: 39, title: "Desobediência a Toque de Recolher", description: "Não recolher-se ao alojamento no horário determinado.", penalty: "Detenção de 10 a 30 dias", keywords: ["recolher", "alojamento", "horário", "toque"], sectionId: 1 },
+            { id: 40, title: "Fuga de Alojamento", description: "Ausentar-se do alojamento sem autorização.", penalty: "Detenção de 20 a 60 dias", keywords: ["fuga", "alojamento", "ausência", "autorização"], sectionId: 1 },
+            { id: 41, title: "Retardo Injustificado", description: "Chegar atrasado sem justificativa válida.", penalty: "Detenção de 5 a 20 dias", keywords: ["retardo", "atraso", "justificativa", "pontualidade"], sectionId: 1 },
+            { id: 42, title: "Abandono de Reunião", description: "Abandonar reunião ou formação sem permissão.", penalty: "Detenção de 15 a 45 dias", keywords: ["abandono", "reunião", "formação", "permissão"], sectionId: 1 },
+            { id: 43, title: "Recusa de Identificação", description: "Recusar-se a se identificar quando solicitado.", penalty: "Detenção de 10 a 30 dias", keywords: ["identificação", "recusa", "solicitação", "identidade"], sectionId: 1 },
+            { id: 44, title: "Uso Indevido de Distintivos", description: "Usar distintivos ou condecorações não autorizados.", penalty: "Detenção de 20 a 60 dias", keywords: ["distintivos", "condecorações", "indevido", "uso"], sectionId: 1 },
+            { id: 45, title: "Falsificação de Documento de Identificação Militar", description: "Falsificar identidade ou documentos militares.", penalty: "Detenção de 90 a 200 dias", keywords: ["falsificação", "identidade", "documentos", "militar"], sectionId: 1 },
+            { id: 46, title: "Simulação de Doença", description: "Simular doença para evitar serviço ou obrigações.", penalty: "Detenção de 30 a 90 dias", keywords: ["simulação", "doença", "serviço", "evasão"], sectionId: 1 },
+            { id: 47, title: "Automutilação para Isenção", description: "Provocar lesão em si mesmo para isentar-se de serviço.", penalty: "Detenção de 90 a 270 dias", keywords: ["automutilação", "lesão", "isenção", "serviço"], sectionId: 1 },
+            { id: 48, title: "Provocação a Superior", description: "Provocar superior com intuito de gerar conflito.", penalty: "Detenção de 30 a 90 dias", keywords: ["provocação", "superior", "conflito", "intencional"], sectionId: 1 },
+            { id: 49, title: "Insulto a Tradições Militares", description: "Insultar ou ridicularizar tradições da instituição.", penalty: "Detenção de 20 a 60 dias", keywords: ["insulto", "tradições", "ridicularização", "instituição"], sectionId: 1 },
+            { id: 50, title: "Quebra de Juramento", description: "Violar juramento prestado à instituição militar.", penalty: "Detenção de 60 a 180 dias", keywords: ["juramento", "violação", "instituição", "quebra"], sectionId: 1 },
+
+            // TÍTULO II - Dos Crimes Contra o Serviço e o Dever Militar (51-100)
+            { id: 51, title: "Deserção", description: "Ausentar-se da unidade por mais de 8 horas sem autorização.", penalty: "Detenção de 90 a 365 dias", keywords: ["deserção", "ausência", "unidade", "abandono"], sectionId: 2 },
+            { id: 52, title: "Deserção Qualificada", description: "Desertar levando armamento ou equipamento da unidade.", penalty: "Detenção de 180 a 365 dias", keywords: ["deserção", "armamento", "equipamento", "qualificada"], sectionId: 2 },
+            { id: 53, title: "Deserção em Tempo de Guerra", description: "Desertar durante período de conflito ou operação militar.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["deserção", "guerra", "conflito", "operação"], sectionId: 2 },
+            { id: 54, title: "Abandono de Posto", description: "Abandonar posto de serviço sem ser devidamente rendido.", penalty: "Detenção de 60 a 180 dias", keywords: ["abandono", "posto", "serviço", "rendição"], sectionId: 2 },
+            { id: 55, title: "Abandono de Sentinela", description: "Abandonar posição de sentinela durante turno.", penalty: "Detenção de 90 a 200 dias", keywords: ["abandono", "sentinela", "posição", "turno"], sectionId: 2 },
+            { id: 56, title: "Dormir em Serviço", description: "Adormecer durante prestação de serviço.", penalty: "Detenção de 30 a 90 dias", keywords: ["dormir", "serviço", "sono", "negligência"], sectionId: 2 },
+            { id: 57, title: "Negligência no Serviço", description: "Executar serviço com negligência causando prejuízo.", penalty: "Detenção de 30 a 90 dias", keywords: ["negligência", "serviço", "prejuízo", "descuido"], sectionId: 2 },
+            { id: 58, title: "Embriaguez em Serviço", description: "Apresentar-se embriagado para o serviço.", penalty: "Detenção de 45 a 135 dias", keywords: ["embriaguez", "álcool", "serviço", "bebida"], sectionId: 2 },
+            { id: 59, title: "Uso de Entorpecentes em Serviço", description: "Usar substâncias entorpecentes durante o serviço.", penalty: "Detenção de 90 a 270 dias", keywords: ["entorpecentes", "drogas", "serviço", "substâncias"], sectionId: 2 },
+            { id: 60, title: "Falta ao Serviço", description: "Faltar ao serviço sem justificativa aceita.", penalty: "Detenção de 15 a 45 dias", keywords: ["falta", "serviço", "justificativa", "ausência"], sectionId: 2 },
+            { id: 61, title: "Atraso Reiterado", description: "Chegar atrasado repetidamente ao serviço.", penalty: "Detenção de 20 a 60 dias", keywords: ["atraso", "reiterado", "pontualidade", "serviço"], sectionId: 2 },
+            { id: 62, title: "Omissão de Dever", description: "Deixar de cumprir dever inerente à função.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "dever", "função", "descumprimento"], sectionId: 2 },
+            { id: 63, title: "Imprudência em Serviço", description: "Agir com imprudência causando risco durante serviço.", penalty: "Detenção de 30 a 90 dias", keywords: ["imprudência", "risco", "serviço", "temeridade"], sectionId: 2 },
+            { id: 64, title: "Imperícia Técnica", description: "Demonstrar imperícia no manuseio de equipamentos.", penalty: "Detenção de 20 a 60 dias", keywords: ["imperícia", "equipamentos", "manuseio", "técnica"], sectionId: 2 },
+            { id: 65, title: "Violação de Escala", description: "Alterar ou violar escala de serviço sem autorização.", penalty: "Detenção de 15 a 45 dias", keywords: ["escala", "violação", "serviço", "alteração"], sectionId: 2 },
+            { id: 66, title: "Troca Irregular de Serviço", description: "Trocar serviço sem autorização do comando.", penalty: "Detenção de 10 a 30 dias", keywords: ["troca", "serviço", "irregular", "autorização"], sectionId: 2 },
+            { id: 67, title: "Recusa de Serviço Extra", description: "Recusar-se a prestar serviço extraordinário quando convocado.", penalty: "Detenção de 20 a 60 dias", keywords: ["recusa", "extra", "serviço", "convocação"], sectionId: 2 },
+            { id: 68, title: "Evasão de Treinamento", description: "Evadir-se de treinamento obrigatório.", penalty: "Detenção de 15 a 45 dias", keywords: ["evasão", "treinamento", "obrigatório", "fuga"], sectionId: 2 },
+            { id: 69, title: "Recusa de Instrução", description: "Recusar-se a participar de instrução militar.", penalty: "Detenção de 20 a 60 dias", keywords: ["recusa", "instrução", "militar", "participação"], sectionId: 2 },
+            { id: 70, title: "Sabotagem de Treinamento", description: "Sabotar ou prejudicar treinamento de outros.", penalty: "Detenção de 45 a 135 dias", keywords: ["sabotagem", "treinamento", "prejuízo", "outros"], sectionId: 2 },
+            { id: 71, title: "Disparo Acidental Culposo", description: "Causar disparo acidental de arma por negligência.", penalty: "Detenção de 30 a 90 dias", keywords: ["disparo", "acidental", "arma", "negligência"], sectionId: 2 },
+            { id: 72, title: "Mau Uso de Equipamento", description: "Usar equipamento de forma inadequada causando dano.", penalty: "Detenção de 20 a 60 dias", keywords: ["equipamento", "inadequado", "dano", "uso"], sectionId: 2 },
+            { id: 73, title: "Descuido com Armamento", description: "Deixar armamento sem vigilância ou em local inadequado.", penalty: "Detenção de 45 a 135 dias", keywords: ["armamento", "descuido", "vigilância", "local"], sectionId: 2 },
+            { id: 74, title: "Perda de Equipamento", description: "Perder equipamento militar por negligência.", penalty: "Detenção de 30 a 90 dias + ressarcimento", keywords: ["perda", "equipamento", "negligência", "ressarcimento"], sectionId: 2 },
+            { id: 75, title: "Extravio de Munição", description: "Extraviar munição ou explosivos.", penalty: "Detenção de 60 a 180 dias", keywords: ["extravio", "munição", "explosivos", "perda"], sectionId: 2 },
+            { id: 76, title: "Falha em Comunicação", description: "Deixar de comunicar informação relevante ao comando.", penalty: "Detenção de 20 a 60 dias", keywords: ["comunicação", "falha", "informação", "comando"], sectionId: 2 },
+            { id: 77, title: "Uso Indevido de Rádio", description: "Usar equipamento de comunicação para fins não autorizados.", penalty: "Detenção de 15 a 45 dias", keywords: ["rádio", "comunicação", "indevido", "uso"], sectionId: 2 },
+            { id: 78, title: "Quebra de Sigilo de Comunicação", description: "Revelar conteúdo de comunicações sigilosas.", penalty: "Detenção de 60 a 180 dias", keywords: ["sigilo", "comunicação", "revelação", "segredo"], sectionId: 2 },
+            { id: 79, title: "Desobediência a Protocolo de Rádio", description: "Não seguir protocolo de comunicação via rádio.", penalty: "Detenção de 10 a 30 dias", keywords: ["protocolo", "rádio", "comunicação", "procedimento"], sectionId: 2 },
+            { id: 80, title: "Interferência em Comunicações", description: "Interferir intencionalmente em comunicações militares.", penalty: "Detenção de 90 a 270 dias", keywords: ["interferência", "comunicações", "intencional", "militar"], sectionId: 2 },
+            { id: 81, title: "Falsa Comunicação de Emergência", description: "Comunicar falsa emergência ou alerta.", penalty: "Detenção de 45 a 135 dias", keywords: ["falsa", "emergência", "alerta", "comunicação"], sectionId: 2 },
+            { id: 82, title: "Omissão de Alerta", description: "Deixar de comunicar situação de perigo iminente.", penalty: "Detenção de 60 a 180 dias", keywords: ["omissão", "alerta", "perigo", "comunicação"], sectionId: 2 },
+            { id: 83, title: "Negligência em Patrulha", description: "Executar patrulha de forma negligente.", penalty: "Detenção de 30 a 90 dias", keywords: ["negligência", "patrulha", "execução", "descuido"], sectionId: 2 },
+            { id: 84, title: "Abandono de Ronda", description: "Abandonar ronda antes do término estabelecido.", penalty: "Detenção de 45 a 135 dias", keywords: ["abandono", "ronda", "término", "serviço"], sectionId: 2 },
+            { id: 85, title: "Falha em Procedimento de Busca", description: "Não executar corretamente procedimento de busca.", penalty: "Detenção de 30 a 90 dias", keywords: ["falha", "busca", "procedimento", "execução"], sectionId: 2 },
+            { id: 86, title: "Omissão em Ocorrência", description: "Deixar de registrar ou reportar ocorrência.", penalty: "Detenção de 20 a 60 dias", keywords: ["omissão", "ocorrência", "registro", "reporte"], sectionId: 2 },
+            { id: 87, title: "Falsificação de Relatório", description: "Falsificar relatório de serviço ou ocorrência.", penalty: "Detenção de 60 a 180 dias", keywords: ["falsificação", "relatório", "serviço", "ocorrência"], sectionId: 2 },
+            { id: 88, title: "Adulteração de Livro de Ocorrências", description: "Adulterar registros em livro de ocorrências.", penalty: "Detenção de 60 a 180 dias", keywords: ["adulteração", "livro", "ocorrências", "registro"], sectionId: 2 },
+            { id: 89, title: "Recusa de Escolta", description: "Recusar-se a realizar serviço de escolta.", penalty: "Detenção de 30 a 90 dias", keywords: ["recusa", "escolta", "serviço", "segurança"], sectionId: 2 },
+            { id: 90, title: "Abandono de Escoltado", description: "Abandonar pessoa ou bem sob escolta.", penalty: "Detenção de 90 a 270 dias", keywords: ["abandono", "escoltado", "pessoa", "bem"], sectionId: 2 },
+            { id: 91, title: "Falha em Custódia", description: "Permitir fuga de pessoa sob custódia por negligência.", penalty: "Detenção de 90 a 270 dias", keywords: ["custódia", "fuga", "negligência", "permissão"], sectionId: 2 },
+            { id: 92, title: "Facilitação de Fuga", description: "Facilitar intencionalmente fuga de detido.", penalty: "Detenção de 180 a 365 dias", keywords: ["facilitação", "fuga", "detido", "intencional"], sectionId: 2 },
+            { id: 93, title: "Maus Tratos a Detido", description: "Praticar maus tratos contra pessoa detida.", penalty: "Detenção de 90 a 270 dias", keywords: ["maus", "tratos", "detido", "violência"], sectionId: 2 },
+            { id: 94, title: "Tortura de Detido", description: "Praticar tortura contra pessoa sob custódia.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["tortura", "detido", "custódia", "violência"], sectionId: 2 },
+            { id: 95, title: "Omissão de Socorro a Detido", description: "Negar socorro médico a pessoa detida.", penalty: "Detenção de 60 a 180 dias", keywords: ["omissão", "socorro", "detido", "médico"], sectionId: 2 },
+            { id: 96, title: "Comunicação Irregular com Detido", description: "Manter comunicação irregular com pessoa detida.", penalty: "Detenção de 30 a 90 dias", keywords: ["comunicação", "irregular", "detido", "contato"], sectionId: 2 },
+            { id: 97, title: "Entrega de Objetos a Detido", description: "Entregar objetos não autorizados a pessoa detida.", penalty: "Detenção de 45 a 135 dias", keywords: ["entrega", "objetos", "detido", "proibido"], sectionId: 2 },
+            { id: 98, title: "Favorecimento de Detido", description: "Conceder privilégios indevidos a pessoa detida.", penalty: "Detenção de 30 a 90 dias", keywords: ["favorecimento", "detido", "privilégios", "indevido"], sectionId: 2 },
+            { id: 99, title: "Violação de Incomunicabilidade", description: "Violar ordem de incomunicabilidade de detido.", penalty: "Detenção de 45 a 135 dias", keywords: ["violação", "incomunicabilidade", "detido", "ordem"], sectionId: 2 },
+            { id: 100, title: "Liberação Irregular", description: "Liberar detido sem autorização competente.", penalty: "Detenção de 90 a 270 dias", keywords: ["liberação", "irregular", "detido", "autorização"], sectionId: 2 },
+
+            // TÍTULO III - Dos Crimes Contra a Administração Militar (101-150)
+            { id: 101, title: "Peculato Militar", description: "Apropriar-se de bem ou valor pertencente à administração militar.", penalty: "Detenção de 180 a 365 dias", keywords: ["peculato", "apropriação", "bem", "valor"], sectionId: 3 },
+            { id: 102, title: "Peculato-Furto", description: "Subtrair bem da administração militar valendo-se do cargo.", penalty: "Detenção de 180 a 365 dias", keywords: ["peculato", "furto", "subtração", "cargo"], sectionId: 3 },
+            { id: 103, title: "Peculato Culposo", description: "Permitir peculato por negligência ou imprudência.", penalty: "Detenção de 30 a 90 dias", keywords: ["peculato", "culposo", "negligência", "imprudência"], sectionId: 3 },
+            { id: 104, title: "Concussão", description: "Exigir vantagem indevida em razão da função.", penalty: "Detenção de 120 a 300 dias", keywords: ["concussão", "vantagem", "função", "exigência"], sectionId: 3 },
+            { id: 105, title: "Excesso de Exação", description: "Exigir tributo ou contribuição acima do devido.", penalty: "Detenção de 60 a 180 dias", keywords: ["exação", "tributo", "contribuição", "excesso"], sectionId: 3 },
+            { id: 106, title: "Corrupção Passiva", description: "Solicitar ou aceitar vantagem para praticar ato funcional.", penalty: "Detenção de 180 a 365 dias", keywords: ["corrupção", "passiva", "vantagem", "funcional"], sectionId: 3 },
+            { id: 107, title: "Corrupção Ativa", description: "Oferecer vantagem a militar para influenciar ato funcional.", penalty: "Detenção de 150 a 300 dias", keywords: ["corrupção", "ativa", "oferecer", "vantagem"], sectionId: 3 },
+            { id: 108, title: "Facilitação de Contrabando", description: "Facilitar entrada ou saída de mercadoria proibida.", penalty: "Detenção de 90 a 270 dias", keywords: ["contrabando", "facilitação", "mercadoria", "proibida"], sectionId: 3 },
+            { id: 109, title: "Descaminho", description: "Iludir pagamento de direito ou imposto devido.", penalty: "Detenção de 60 a 180 dias", keywords: ["descaminho", "imposto", "direito", "evasão"], sectionId: 3 },
+            { id: 110, title: "Prevaricação", description: "Retardar ou deixar de praticar ato de ofício por interesse pessoal.", penalty: "Detenção de 60 a 180 dias", keywords: ["prevaricação", "ato", "ofício", "interesse"], sectionId: 3 },
+            { id: 111, title: "Condescendência Criminosa", description: "Deixar de responsabilizar subordinado por indulgência.", penalty: "Detenção de 30 a 90 dias", keywords: ["condescendência", "subordinado", "indulgência", "responsabilidade"], sectionId: 3 },
+            { id: 112, title: "Advocacia Administrativa", description: "Patrocinar interesse privado junto à administração.", penalty: "Detenção de 30 a 90 dias", keywords: ["advocacia", "administrativa", "interesse", "privado"], sectionId: 3 },
+            { id: 113, title: "Tráfico de Influência", description: "Solicitar vantagem para influenciar ato de servidor.", penalty: "Detenção de 90 a 270 dias", keywords: ["tráfico", "influência", "vantagem", "servidor"], sectionId: 3 },
+            { id: 114, title: "Fraude em Licitação", description: "Fraudar procedimento licitatório da administração militar.", penalty: "Detenção de 150 a 300 dias", keywords: ["fraude", "licitação", "procedimento", "administração"], sectionId: 3 },
+            { id: 115, title: "Superfaturamento", description: "Participar de esquema de superfaturamento em aquisições.", penalty: "Detenção de 180 a 365 dias", keywords: ["superfaturamento", "aquisições", "esquema", "preço"], sectionId: 3 },
+            { id: 116, title: "Desvio de Recursos", description: "Desviar recursos destinados a fins específicos.", penalty: "Detenção de 180 a 365 dias", keywords: ["desvio", "recursos", "fins", "específicos"], sectionId: 3 },
+            { id: 117, title: "Falsidade Ideológica", description: "Inserir declaração falsa em documento oficial.", penalty: "Detenção de 90 a 270 dias", keywords: ["falsidade", "ideológica", "declaração", "documento"], sectionId: 3 },
+            { id: 118, title: "Falsificação de Documento Público", description: "Falsificar documento público militar.", penalty: "Detenção de 120 a 300 dias", keywords: ["falsificação", "documento", "público", "militar"], sectionId: 3 },
+            { id: 119, title: "Uso de Documento Falso", description: "Usar documento sabidamente falso.", penalty: "Detenção de 90 a 270 dias", keywords: ["uso", "documento", "falso", "utilização"], sectionId: 3 },
+            { id: 120, title: "Supressão de Documento", description: "Destruir ou ocultar documento público.", penalty: "Detenção de 60 a 180 dias", keywords: ["supressão", "documento", "destruição", "ocultação"], sectionId: 3 },
+            { id: 121, title: "Violação de Sigilo Funcional", description: "Revelar informação sigilosa obtida em razão do cargo.", penalty: "Detenção de 90 a 270 dias", keywords: ["violação", "sigilo", "funcional", "informação"], sectionId: 3 },
+            { id: 122, title: "Divulgação de Segredo", description: "Divulgar segredo administrativo da instituição.", penalty: "Detenção de 60 a 180 dias", keywords: ["divulgação", "segredo", "administrativo", "instituição"], sectionId: 3 },
+            { id: 123, title: "Violação de Correspondência Oficial", description: "Violar correspondência oficial sigilosa.", penalty: "Detenção de 45 a 135 dias", keywords: ["violação", "correspondência", "oficial", "sigilosa"], sectionId: 3 },
+            { id: 124, title: "Extravio de Documento", description: "Extraviar documento oficial por negligência.", penalty: "Detenção de 30 a 90 dias", keywords: ["extravio", "documento", "oficial", "negligência"], sectionId: 3 },
+            { id: 125, title: "Sonegação de Informação", description: "Sonegar informação devida à administração.", penalty: "Detenção de 30 a 90 dias", keywords: ["sonegação", "informação", "administração", "omissão"], sectionId: 3 },
+            { id: 126, title: "Omissão de Registro", description: "Deixar de registrar ato que deveria ser documentado.", penalty: "Detenção de 20 a 60 dias", keywords: ["omissão", "registro", "ato", "documentação"], sectionId: 3 },
+            { id: 127, title: "Alteração de Sistema", description: "Alterar sistema informatizado sem autorização.", penalty: "Detenção de 60 a 180 dias", keywords: ["alteração", "sistema", "informatizado", "autorização"], sectionId: 3 },
+            { id: 128, title: "Acesso Indevido a Sistema", description: "Acessar sistema informatizado sem autorização.", penalty: "Detenção de 45 a 135 dias", keywords: ["acesso", "sistema", "indevido", "informatizado"], sectionId: 3 },
+            { id: 129, title: "Inserção de Dados Falsos", description: "Inserir dados falsos em sistema informatizado.", penalty: "Detenção de 90 a 270 dias", keywords: ["inserção", "dados", "falsos", "sistema"], sectionId: 3 },
+            { id: 130, title: "Sabotagem de Sistema", description: "Sabotar sistema informatizado da administração.", penalty: "Detenção de 180 a 365 dias", keywords: ["sabotagem", "sistema", "informatizado", "administração"], sectionId: 3 },
+            { id: 131, title: "Uso Indevido de Senha", description: "Usar senha de outro para acessar sistemas.", penalty: "Detenção de 30 a 90 dias", keywords: ["senha", "indevido", "acesso", "sistema"], sectionId: 3 },
+            { id: 132, title: "Compartilhamento de Credenciais", description: "Compartilhar credenciais de acesso a sistemas.", penalty: "Detenção de 20 a 60 dias", keywords: ["compartilhamento", "credenciais", "acesso", "sistema"], sectionId: 3 },
+            { id: 133, title: "Fraude de Ponto", description: "Fraudar registro de ponto ou frequência.", penalty: "Detenção de 30 a 90 dias", keywords: ["fraude", "ponto", "frequência", "registro"], sectionId: 3 },
+            { id: 134, title: "Registro de Ponto por Terceiro", description: "Registrar ponto de outro militar.", penalty: "Detenção de 20 a 60 dias", keywords: ["registro", "ponto", "terceiro", "fraude"], sectionId: 3 },
+            { id: 135, title: "Falsificação de Atestado", description: "Falsificar atestado médico ou similar.", penalty: "Detenção de 60 a 180 dias", keywords: ["falsificação", "atestado", "médico", "documento"], sectionId: 3 },
+            { id: 136, title: "Emissão Irregular de Certidão", description: "Emitir certidão irregular ou falsa.", penalty: "Detenção de 60 a 180 dias", keywords: ["certidão", "irregular", "emissão", "falsa"], sectionId: 3 },
+            { id: 137, title: "Cobrança Indevida", description: "Cobrar valores não autorizados.", penalty: "Detenção de 45 a 135 dias", keywords: ["cobrança", "indevida", "valores", "autorização"], sectionId: 3 },
+            { id: 138, title: "Apropriação de Taxa", description: "Apropriar-se de taxa ou emolumento recolhido.", penalty: "Detenção de 90 a 270 dias", keywords: ["apropriação", "taxa", "emolumento", "recolhimento"], sectionId: 3 },
+            { id: 139, title: "Emprego Irregular de Verbas", description: "Empregar verbas públicas de forma irregular.", penalty: "Detenção de 120 a 300 dias", keywords: ["emprego", "verbas", "irregular", "público"], sectionId: 3 },
+            { id: 140, title: "Dispensa Irregular de Licitação", description: "Dispensar licitação fora das hipóteses legais.", penalty: "Detenção de 90 a 270 dias", keywords: ["dispensa", "licitação", "irregular", "legal"], sectionId: 3 },
+            { id: 141, title: "Direcionamento de Licitação", description: "Direcionar licitação para favorecer participante.", penalty: "Detenção de 120 a 300 dias", keywords: ["direcionamento", "licitação", "favorecimento", "participante"], sectionId: 3 },
+            { id: 142, title: "Conluio em Licitação", description: "Participar de conluio para fraudar licitação.", penalty: "Detenção de 150 a 300 dias", keywords: ["conluio", "licitação", "fraude", "participação"], sectionId: 3 },
+            { id: 143, title: "Recebimento Antecipado", description: "Atestar serviço não executado para antecipação de pagamento.", penalty: "Detenção de 90 a 270 dias", keywords: ["recebimento", "antecipado", "atestação", "pagamento"], sectionId: 3 },
+            { id: 144, title: "Contratação de Parente", description: "Contratar parente para prestar serviços à unidade.", penalty: "Detenção de 60 a 180 dias", keywords: ["contratação", "parente", "nepotismo", "serviços"], sectionId: 3 },
+            { id: 145, title: "Conflito de Interesses", description: "Atuar em situação de conflito de interesses.", penalty: "Detenção de 60 a 180 dias", keywords: ["conflito", "interesses", "atuação", "pessoal"], sectionId: 3 },
+            { id: 146, title: "Enriquecimento Ilícito", description: "Apresentar evolução patrimonial incompatível.", penalty: "Detenção de 180 a 365 dias", keywords: ["enriquecimento", "ilícito", "patrimônio", "incompatível"], sectionId: 3 },
+            { id: 147, title: "Ocultação de Bens", description: "Ocultar bens para evitar fiscalização.", penalty: "Detenção de 90 a 270 dias", keywords: ["ocultação", "bens", "fiscalização", "patrimônio"], sectionId: 3 },
+            { id: 148, title: "Fraude em Prestação de Contas", description: "Fraudar prestação de contas de recursos.", penalty: "Detenção de 120 a 300 dias", keywords: ["fraude", "prestação", "contas", "recursos"], sectionId: 3 },
+            { id: 149, title: "Obstrução de Auditoria", description: "Obstruir ou dificultar trabalho de auditoria.", penalty: "Detenção de 60 a 180 dias", keywords: ["obstrução", "auditoria", "dificultação", "fiscalização"], sectionId: 3 },
+            { id: 150, title: "Destruição de Prova Administrativa", description: "Destruir documentos para obstruir investigação.", penalty: "Detenção de 120 a 300 dias", keywords: ["destruição", "prova", "administrativa", "investigação"], sectionId: 3 },
+
+            // TÍTULO IV - Dos Crimes Contra a Pessoa (151-200)
+            { id: 151, title: "Homicídio", description: "Matar outro militar ou civil em área de jurisdição militar.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["homicídio", "morte", "matar", "assassinato"], sectionId: 4 },
+            { id: 152, title: "Homicídio Culposo", description: "Causar morte por negligência, imprudência ou imperícia.", penalty: "Detenção de 90 a 270 dias", keywords: ["homicídio", "culposo", "negligência", "morte"], sectionId: 4 },
+            { id: 153, title: "Tentativa de Homicídio", description: "Tentar matar outra pessoa sem conseguir.", penalty: "Detenção de 180 a 365 dias", keywords: ["tentativa", "homicídio", "morte", "tentado"], sectionId: 4 },
+            { id: 154, title: "Lesão Corporal Grave", description: "Causar lesão corporal de natureza grave.", penalty: "Detenção de 90 a 270 dias", keywords: ["lesão", "corporal", "grave", "ferimento"], sectionId: 4 },
+            { id: 155, title: "Lesão Corporal Leve", description: "Causar lesão corporal de natureza leve.", penalty: "Detenção de 30 a 90 dias", keywords: ["lesão", "corporal", "leve", "ferimento"], sectionId: 4 },
+            { id: 156, title: "Lesão Corporal Culposa", description: "Causar lesão por negligência ou imprudência.", penalty: "Detenção de 20 a 60 dias", keywords: ["lesão", "culposa", "negligência", "imprudência"], sectionId: 4 },
+            { id: 157, title: "Lesão Seguida de Morte", description: "Causar lesão que resulte em morte da vítima.", penalty: "Detenção de 180 a 365 dias", keywords: ["lesão", "morte", "resultado", "vítima"], sectionId: 4 },
+            { id: 158, title: "Rixa", description: "Participar de rixa entre militares.", penalty: "Detenção de 15 a 45 dias", keywords: ["rixa", "briga", "confronto", "militares"], sectionId: 4 },
+            { id: 159, title: "Rixa Qualificada", description: "Participar de rixa com resultado morte ou lesão grave.", penalty: "Detenção de 60 a 180 dias", keywords: ["rixa", "qualificada", "morte", "lesão"], sectionId: 4 },
+            { id: 160, title: "Constrangimento Ilegal", description: "Constranger alguém mediante violência ou ameaça.", penalty: "Detenção de 30 a 90 dias", keywords: ["constrangimento", "ilegal", "violência", "ameaça"], sectionId: 4 },
+            { id: 161, title: "Ameaça", description: "Ameaçar pessoa de causar-lhe mal injusto.", penalty: "Detenção de 15 a 45 dias", keywords: ["ameaça", "mal", "injusto", "intimidação"], sectionId: 4 },
+            { id: 162, title: "Sequestro", description: "Privar alguém de sua liberdade de locomoção.", penalty: "Detenção de 120 a 300 dias", keywords: ["sequestro", "liberdade", "privação", "locomoção"], sectionId: 4 },
+            { id: 163, title: "Cárcere Privado", description: "Manter pessoa em cárcere privado.", penalty: "Detenção de 90 a 270 dias", keywords: ["cárcere", "privado", "prisão", "ilegal"], sectionId: 4 },
+            { id: 164, title: "Violação de Domicílio", description: "Invadir domicílio de militar ou civil sem autorização legal.", penalty: "Detenção de 30 a 90 dias", keywords: ["violação", "domicílio", "invasão", "residência"], sectionId: 4 },
+            { id: 165, title: "Calúnia", description: "Atribuir falsamente crime a outrem.", penalty: "Detenção de 30 a 90 dias", keywords: ["calúnia", "crime", "falso", "acusação"], sectionId: 4 },
+            { id: 166, title: "Difamação", description: "Imputar fato ofensivo à reputação de outrem.", penalty: "Detenção de 20 a 60 dias", keywords: ["difamação", "reputação", "ofensa", "fato"], sectionId: 4 },
+            { id: 167, title: "Injúria", description: "Ofender a dignidade ou decoro de outrem.", penalty: "Detenção de 15 a 45 dias", keywords: ["injúria", "dignidade", "decoro", "ofensa"], sectionId: 4 },
+            { id: 168, title: "Injúria Racial", description: "Ofender utilizando elementos referentes a raça, cor, etnia.", penalty: "Detenção de 60 a 180 dias", keywords: ["injúria", "racial", "racismo", "discriminação"], sectionId: 4 },
+            { id: 169, title: "Violência Doméstica Militar", description: "Praticar violência contra familiar dentro de instalação militar.", penalty: "Detenção de 90 a 270 dias", keywords: ["violência", "doméstica", "familiar", "militar"], sectionId: 4 },
+            { id: 170, title: "Estupro", description: "Constranger à conjunção carnal mediante violência ou ameaça.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["estupro", "violência", "sexual", "conjunção"], sectionId: 4 },
+            { id: 171, title: "Atentado Violento ao Pudor", description: "Praticar ato libidinoso diverso mediante violência.", penalty: "Detenção de 180 a 365 dias", keywords: ["atentado", "pudor", "libidinoso", "violência"], sectionId: 4 },
+            { id: 172, title: "Assédio Sexual", description: "Constranger com intuito de obter vantagem sexual.", penalty: "Detenção de 60 a 180 dias", keywords: ["assédio", "sexual", "constrangimento", "vantagem"], sectionId: 4 },
+            { id: 173, title: "Importunação Sexual", description: "Praticar ato libidinoso sem consentimento.", penalty: "Detenção de 45 a 135 dias", keywords: ["importunação", "sexual", "libidinoso", "consentimento"], sectionId: 4 },
+            { id: 174, title: "Ato Obsceno", description: "Praticar ato obsceno em lugar público ou acessível.", penalty: "Detenção de 15 a 45 dias", keywords: ["ato", "obsceno", "público", "indecência"], sectionId: 4 },
+            { id: 175, title: "Perturbação da Tranquilidade", description: "Perturbar reiteradamente a tranquilidade de outrem.", penalty: "Detenção de 10 a 30 dias", keywords: ["perturbação", "tranquilidade", "assédio", "perseguição"], sectionId: 4 },
+            { id: 176, title: "Maus Tratos", description: "Expor a perigo vida ou saúde de pessoa sob guarda.", penalty: "Detenção de 30 a 90 dias", keywords: ["maus", "tratos", "perigo", "guarda"], sectionId: 4 },
+            { id: 177, title: "Abandono de Incapaz", description: "Abandonar pessoa incapaz de defesa própria.", penalty: "Detenção de 45 a 135 dias", keywords: ["abandono", "incapaz", "defesa", "pessoa"], sectionId: 4 },
+            { id: 178, title: "Omissão de Socorro", description: "Deixar de prestar socorro a pessoa ferida ou em perigo.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "socorro", "ferida", "perigo"], sectionId: 4 },
+            { id: 179, title: "Exposição a Perigo", description: "Expor pessoa a perigo direto e iminente.", penalty: "Detenção de 45 a 135 dias", keywords: ["exposição", "perigo", "direto", "iminente"], sectionId: 4 },
+            { id: 180, title: "Perigo para Vida ou Saúde", description: "Criar situação de perigo para vida ou saúde de outrem.", penalty: "Detenção de 30 a 90 dias", keywords: ["perigo", "vida", "saúde", "situação"], sectionId: 4 },
+            { id: 181, title: "Induzimento ao Suicídio", description: "Induzir ou instigar pessoa ao suicídio.", penalty: "Detenção de 90 a 270 dias", keywords: ["induzimento", "suicídio", "instigação", "morte"], sectionId: 4 },
+            { id: 182, title: "Auxílio ao Suicídio", description: "Prestar auxílio material ao suicídio de outrem.", penalty: "Detenção de 60 a 180 dias", keywords: ["auxílio", "suicídio", "material", "ajuda"], sectionId: 4 },
+            { id: 183, title: "Infanticídio", description: "Matar, sob influência de estado puerperal, o próprio filho.", penalty: "Detenção de 180 a 365 dias", keywords: ["infanticídio", "filho", "estado", "puerperal"], sectionId: 4 },
+            { id: 184, title: "Aborto Provocado", description: "Provocar aborto em si mesma ou em outrem.", penalty: "Detenção de 60 a 180 dias", keywords: ["aborto", "provocado", "gravidez", "interrupção"], sectionId: 4 },
+            { id: 185, title: "Violação de Cadáver", description: "Violar ou profanar cadáver em área militar.", penalty: "Detenção de 30 a 90 dias", keywords: ["violação", "cadáver", "profanação", "restos"], sectionId: 4 },
+            { id: 186, title: "Destruição de Cadáver", description: "Destruir ou ocultar cadáver para obstruir investigação.", penalty: "Detenção de 90 a 270 dias", keywords: ["destruição", "cadáver", "ocultação", "investigação"], sectionId: 4 },
+            { id: 187, title: "Uso Indevido de Partes de Cadáver", description: "Utilizar partes de cadáver sem autorização legal.", penalty: "Detenção de 45 a 135 dias", keywords: ["uso", "cadáver", "partes", "autorização"], sectionId: 4 },
+            { id: 188, title: "Trote Violento", description: "Praticar trote com violência física ou psicológica.", penalty: "Detenção de 60 a 180 dias", keywords: ["trote", "violência", "iniciação", "abuso"], sectionId: 4 },
+            { id: 189, title: "Bullying Militar", description: "Praticar intimidação sistemática contra companheiro.", penalty: "Detenção de 45 a 135 dias", keywords: ["bullying", "intimidação", "sistemática", "companheiro"], sectionId: 4 },
+            { id: 190, title: "Discriminação", description: "Discriminar companheiro por qualquer motivo.", penalty: "Detenção de 30 a 90 dias", keywords: ["discriminação", "preconceito", "companheiro", "tratamento"], sectionId: 4 },
+            { id: 191, title: "Perseguição", description: "Perseguir companheiro de forma reiterada.", penalty: "Detenção de 45 a 135 dias", keywords: ["perseguição", "stalking", "reiterada", "companheiro"], sectionId: 4 },
+            { id: 192, title: "Isolamento Forçado", description: "Forçar isolamento de companheiro do grupo.", penalty: "Detenção de 30 a 90 dias", keywords: ["isolamento", "forçado", "grupo", "exclusão"], sectionId: 4 },
+            { id: 193, title: "Humilhação Pública", description: "Humilhar companheiro em público.", penalty: "Detenção de 30 a 90 dias", keywords: ["humilhação", "pública", "constrangimento", "companheiro"], sectionId: 4 },
+            { id: 194, title: "Agressão com Arma Branca", description: "Agredir utilizando arma branca.", penalty: "Detenção de 90 a 270 dias", keywords: ["agressão", "arma", "branca", "ferimento"], sectionId: 4 },
+            { id: 195, title: "Disparo Contra Pessoa", description: "Efetuar disparo de arma de fogo contra pessoa.", penalty: "Detenção de 120 a 300 dias", keywords: ["disparo", "arma", "fogo", "pessoa"], sectionId: 4 },
+            { id: 196, title: "Envenenamento", description: "Administrar substância nociva à saúde de outrem.", penalty: "Detenção de 180 a 365 dias", keywords: ["envenenamento", "substância", "nociva", "saúde"], sectionId: 4 },
+            { id: 197, title: "Propagação de Doença", description: "Propagar doença contagiosa intencionalmente.", penalty: "Detenção de 90 a 270 dias", keywords: ["propagação", "doença", "contagiosa", "intencional"], sectionId: 4 },
+            { id: 198, title: "Exploração de Prestígio", description: "Explorar prestígio do cargo para obter vantagem.", penalty: "Detenção de 60 a 180 dias", keywords: ["exploração", "prestígio", "cargo", "vantagem"], sectionId: 4 },
+            { id: 199, title: "Chantagem", description: "Obter vantagem mediante ameaça de revelação.", penalty: "Detenção de 90 a 270 dias", keywords: ["chantagem", "ameaça", "revelação", "vantagem"], sectionId: 4 },
+            { id: 200, title: "Extorsão", description: "Constranger para obter vantagem econômica indevida.", penalty: "Detenção de 120 a 300 dias", keywords: ["extorsão", "constrangimento", "vantagem", "econômica"], sectionId: 4 },
+
+            // TÍTULO V - Dos Crimes Contra o Patrimônio (201-250)
+            { id: 201, title: "Furto Simples", description: "Subtrair para si coisa alheia móvel.", penalty: "Detenção de 30 a 90 dias", keywords: ["furto", "subtração", "móvel", "coisa"], sectionId: 5 },
+            { id: 202, title: "Furto Qualificado", description: "Furto com destruição de obstáculo, abuso de confiança ou concurso de pessoas.", penalty: "Detenção de 60 a 180 dias", keywords: ["furto", "qualificado", "obstáculo", "concurso"], sectionId: 5 },
+            { id: 203, title: "Furto de Armamento", description: "Subtrair armamento ou munição da unidade.", penalty: "Detenção de 150 a 300 dias", keywords: ["furto", "armamento", "munição", "subtração"], sectionId: 5 },
+            { id: 204, title: "Furto de Veículo Militar", description: "Subtrair veículo pertencente à unidade.", penalty: "Detenção de 90 a 270 dias", keywords: ["furto", "veículo", "militar", "subtração"], sectionId: 5 },
+            { id: 205, title: "Furto de Combustível", description: "Subtrair combustível destinado a uso oficial.", penalty: "Detenção de 45 a 135 dias", keywords: ["furto", "combustível", "subtração", "oficial"], sectionId: 5 },
+            { id: 206, title: "Furto de Equipamento de Comunicação", description: "Subtrair rádio ou equipamento de comunicação.", penalty: "Detenção de 90 a 270 dias", keywords: ["furto", "comunicação", "rádio", "equipamento"], sectionId: 5 },
+            { id: 207, title: "Furto de Pertences de Companheiro", description: "Subtrair pertences pessoais de outro militar.", penalty: "Detenção de 45 a 135 dias", keywords: ["furto", "pertences", "companheiro", "pessoais"], sectionId: 5 },
+            { id: 208, title: "Furto em Alojamento", description: "Praticar furto no interior de alojamento.", penalty: "Detenção de 60 a 180 dias", keywords: ["furto", "alojamento", "interior", "dormitório"], sectionId: 5 },
+            { id: 209, title: "Furto Durante Exercício", description: "Furtar durante exercício ou operação.", penalty: "Detenção de 90 a 270 dias", keywords: ["furto", "exercício", "operação", "treinamento"], sectionId: 5 },
+            { id: 210, title: "Furto de Alimentos", description: "Subtrair alimentos destinados à tropa.", penalty: "Detenção de 30 a 90 dias", keywords: ["furto", "alimentos", "rancho", "tropa"], sectionId: 5 },
+            { id: 211, title: "Roubo", description: "Subtrair coisa alheia mediante violência ou ameaça.", penalty: "Detenção de 120 a 300 dias", keywords: ["roubo", "violência", "ameaça", "subtração"], sectionId: 5 },
+            { id: 212, title: "Roubo Qualificado", description: "Roubo com emprego de arma ou lesão grave.", penalty: "Detenção de 180 a 365 dias", keywords: ["roubo", "qualificado", "arma", "lesão"], sectionId: 5 },
+            { id: 213, title: "Latrocínio", description: "Roubo seguido de morte.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["latrocínio", "roubo", "morte", "resultado"], sectionId: 5 },
+            { id: 214, title: "Apropriação Indébita", description: "Apropriar-se de coisa alheia que tem posse ou detenção.", penalty: "Detenção de 45 a 135 dias", keywords: ["apropriação", "indébita", "posse", "detenção"], sectionId: 5 },
+            { id: 215, title: "Apropriação de Coisa Havida por Erro", description: "Apropriar-se de coisa recebida por engano.", penalty: "Detenção de 20 a 60 dias", keywords: ["apropriação", "erro", "engano", "recebimento"], sectionId: 5 },
+            { id: 216, title: "Apropriação de Coisa Achada", description: "Apropriar-se de coisa encontrada.", penalty: "Detenção de 10 a 30 dias", keywords: ["apropriação", "achada", "encontrada", "coisa"], sectionId: 5 },
+            { id: 217, title: "Estelionato", description: "Obter vantagem mediante artifício, ardil ou fraude.", penalty: "Detenção de 60 a 180 dias", keywords: ["estelionato", "fraude", "ardil", "vantagem"], sectionId: 5 },
+            { id: 218, title: "Fraude no Recebimento de Benefício", description: "Fraudar para receber benefício indevido.", penalty: "Detenção de 60 a 180 dias", keywords: ["fraude", "benefício", "indevido", "recebimento"], sectionId: 5 },
+            { id: 219, title: "Falsificação de Recibo", description: "Falsificar recibo para obter vantagem.", penalty: "Detenção de 45 a 135 dias", keywords: ["falsificação", "recibo", "vantagem", "documento"], sectionId: 5 },
+            { id: 220, title: "Duplicata Simulada", description: "Emitir fatura ou duplicata sem correspondência.", penalty: "Detenção de 30 a 90 dias", keywords: ["duplicata", "simulada", "fatura", "falsa"], sectionId: 5 },
+            { id: 221, title: "Abuso de Incapaz", description: "Obter vantagem de pessoa incapaz.", penalty: "Detenção de 60 a 180 dias", keywords: ["abuso", "incapaz", "vantagem", "exploração"], sectionId: 5 },
+            { id: 222, title: "Indução a Erro", description: "Induzir pessoa a erro para obter vantagem.", penalty: "Detenção de 30 a 90 dias", keywords: ["indução", "erro", "vantagem", "engano"], sectionId: 5 },
+            { id: 223, title: "Fraude Contra Seguro", description: "Fraudar para receber indenização de seguro.", penalty: "Detenção de 60 a 180 dias", keywords: ["fraude", "seguro", "indenização", "sinistro"], sectionId: 5 },
+            { id: 224, title: "Receptação", description: "Adquirir ou receber coisa que sabe ser produto de crime.", penalty: "Detenção de 30 a 90 dias", keywords: ["receptação", "produto", "crime", "adquirir"], sectionId: 5 },
+            { id: 225, title: "Receptação Qualificada", description: "Receptação no exercício de atividade comercial.", penalty: "Detenção de 60 a 180 dias", keywords: ["receptação", "qualificada", "comercial", "atividade"], sectionId: 5 },
+            { id: 226, title: "Dano", description: "Destruir, inutilizar ou deteriorar coisa alheia.", penalty: "Detenção de 20 a 60 dias", keywords: ["dano", "destruição", "deterioração", "coisa"], sectionId: 5 },
+            { id: 227, title: "Dano Qualificado", description: "Dano com violência, substância inflamável ou em patrimônio público.", penalty: "Detenção de 60 a 180 dias", keywords: ["dano", "qualificado", "violência", "público"], sectionId: 5 },
+            { id: 228, title: "Dano a Patrimônio Militar", description: "Danificar instalação, veículo ou equipamento militar.", penalty: "Detenção de 90 a 270 dias", keywords: ["dano", "patrimônio", "militar", "instalação"], sectionId: 5 },
+            { id: 229, title: "Dano a Armamento", description: "Danificar armamento ou munição.", penalty: "Detenção de 120 a 300 dias", keywords: ["dano", "armamento", "munição", "destruição"], sectionId: 5 },
+            { id: 230, title: "Dano a Sistema Informatizado", description: "Danificar sistema informatizado da administração.", penalty: "Detenção de 90 a 270 dias", keywords: ["dano", "sistema", "informatizado", "administração"], sectionId: 5 },
+            { id: 231, title: "Introdução de Vírus", description: "Introduzir vírus ou malware em sistema militar.", penalty: "Detenção de 120 a 300 dias", keywords: ["vírus", "malware", "sistema", "sabotagem"], sectionId: 5 },
+            { id: 232, title: "Incêndio Culposo", description: "Causar incêndio por negligência ou imprudência.", penalty: "Detenção de 45 a 135 dias", keywords: ["incêndio", "culposo", "negligência", "fogo"], sectionId: 5 },
+            { id: 233, title: "Incêndio Doloso", description: "Provocar incêndio intencionalmente.", penalty: "Detenção de 180 a 365 dias", keywords: ["incêndio", "doloso", "intencional", "fogo"], sectionId: 5 },
+            { id: 234, title: "Explosão", description: "Causar explosão em área militar.", penalty: "Detenção de 180 a 365 dias", keywords: ["explosão", "área", "militar", "bomba"], sectionId: 5 },
+            { id: 235, title: "Uso de Gás ou Substância Asfixiante", description: "Usar gás ou substância para causar perigo.", penalty: "Detenção de 120 a 300 dias", keywords: ["gás", "substância", "asfixiante", "perigo"], sectionId: 5 },
+            { id: 236, title: "Inundação", description: "Causar inundação em área militar.", penalty: "Detenção de 120 a 300 dias", keywords: ["inundação", "água", "área", "militar"], sectionId: 5 },
+            { id: 237, title: "Desabamento", description: "Causar desabamento de edificação.", penalty: "Detenção de 90 a 270 dias", keywords: ["desabamento", "edificação", "construção", "colapso"], sectionId: 5 },
+            { id: 238, title: "Atentado Contra Transporte", description: "Atentar contra segurança de transporte militar.", penalty: "Detenção de 120 a 300 dias", keywords: ["atentado", "transporte", "segurança", "militar"], sectionId: 5 },
+            { id: 239, title: "Arremesso de Projétil", description: "Arremessar projétil contra pessoa ou edificação.", penalty: "Detenção de 30 a 90 dias", keywords: ["arremesso", "projétil", "pessoa", "edificação"], sectionId: 5 },
+            { id: 240, title: "Usurpação de Águas", description: "Usurpar águas destinadas ao uso da unidade.", penalty: "Detenção de 20 a 60 dias", keywords: ["usurpação", "águas", "unidade", "recurso"], sectionId: 5 },
+            { id: 241, title: "Esbulho Possessório", description: "Invadir terreno ou instalação para tomar posse.", penalty: "Detenção de 30 a 90 dias", keywords: ["esbulho", "invasão", "terreno", "posse"], sectionId: 5 },
+            { id: 242, title: "Supressão ou Alteração de Marcos", description: "Suprimir ou alterar marcos divisórios.", penalty: "Detenção de 20 a 60 dias", keywords: ["supressão", "marcos", "divisórios", "alteração"], sectionId: 5 },
+            { id: 243, title: "Desvio de Energia", description: "Desviar energia elétrica para uso não autorizado.", penalty: "Detenção de 30 a 90 dias", keywords: ["desvio", "energia", "elétrica", "furto"], sectionId: 5 },
+            { id: 244, title: "Invasão de Dispositivo Informático", description: "Invadir dispositivo informático de companheiro.", penalty: "Detenção de 45 a 135 dias", keywords: ["invasão", "dispositivo", "informático", "hacker"], sectionId: 5 },
+            { id: 245, title: "Obtenção Irregular de Vantagem", description: "Obter vantagem patrimonial de forma irregular.", penalty: "Detenção de 60 a 180 dias", keywords: ["obtenção", "vantagem", "patrimonial", "irregular"], sectionId: 5 },
+            { id: 246, title: "Exploração de Jogo", description: "Explorar jogo de azar em área militar.", penalty: "Detenção de 45 a 135 dias", keywords: ["exploração", "jogo", "azar", "aposta"], sectionId: 5 },
+            { id: 247, title: "Usura", description: "Praticar agiotagem contra companheiros.", penalty: "Detenção de 60 a 180 dias", keywords: ["usura", "agiotagem", "empréstimo", "juros"], sectionId: 5 },
+            { id: 248, title: "Fraude em Competição", description: "Fraudar resultado de competição interna.", penalty: "Detenção de 30 a 90 dias", keywords: ["fraude", "competição", "resultado", "interno"], sectionId: 5 },
+            { id: 249, title: "Abuso de Propriedade Intelectual", description: "Usar propriedade intelectual alheia indevidamente.", penalty: "Detenção de 20 a 60 dias", keywords: ["abuso", "propriedade", "intelectual", "indevido"], sectionId: 5 },
+            { id: 250, title: "Violação de Direito Autoral Institucional", description: "Violar direito autoral de material da instituição.", penalty: "Detenção de 30 a 90 dias", keywords: ["violação", "direito", "autoral", "instituição"], sectionId: 5 },
+
+            // TÍTULO VI - Dos Crimes Contra a Segurança da Unidade (251-300)
+            { id: 251, title: "Entrada Irregular de Civil", description: "Permitir entrada irregular de civil em área restrita.", penalty: "Detenção de 45 a 135 dias", keywords: ["entrada", "irregular", "civil", "restrita"], sectionId: 6 },
+            { id: 252, title: "Permanência Irregular de Visitante", description: "Permitir permanência irregular de visitante.", penalty: "Detenção de 30 a 90 dias", keywords: ["permanência", "irregular", "visitante", "área"], sectionId: 6 },
+            { id: 253, title: "Introdução de Objeto Proibido", description: "Introduzir objeto proibido na unidade.", penalty: "Detenção de 60 a 180 dias", keywords: ["introdução", "objeto", "proibido", "unidade"], sectionId: 6 },
+            { id: 254, title: "Introdução de Arma Irregular", description: "Introduzir arma não registrada na unidade.", penalty: "Detenção de 90 a 270 dias", keywords: ["introdução", "arma", "irregular", "registro"], sectionId: 6 },
+            { id: 255, title: "Introdução de Entorpecentes", description: "Introduzir drogas ou entorpecentes na unidade.", penalty: "Detenção de 180 a 365 dias", keywords: ["introdução", "entorpecentes", "drogas", "unidade"], sectionId: 6 },
+            { id: 256, title: "Tráfico de Entorpecentes na Unidade", description: "Praticar tráfico de drogas em área militar.", penalty: "Expulsão e processo criminal", keywords: ["tráfico", "entorpecentes", "drogas", "área"], sectionId: 6 },
+            { id: 257, title: "Consumo de Entorpecentes na Unidade", description: "Consumir substâncias ilícitas em área militar.", penalty: "Detenção de 90 a 270 dias", keywords: ["consumo", "entorpecentes", "ilícitas", "área"], sectionId: 6 },
+            { id: 258, title: "Porte Irregular de Arma", description: "Portar arma fora das condições regulamentares.", penalty: "Detenção de 60 a 180 dias", keywords: ["porte", "irregular", "arma", "regulamentar"], sectionId: 6 },
+            { id: 259, title: "Disparo em Área Proibida", description: "Efetuar disparo em área não autorizada.", penalty: "Detenção de 45 a 135 dias", keywords: ["disparo", "área", "proibida", "arma"], sectionId: 6 },
+            { id: 260, title: "Manuseio Irregular de Explosivos", description: "Manusear explosivos sem autorização.", penalty: "Detenção de 90 a 270 dias", keywords: ["manuseio", "explosivos", "irregular", "autorização"], sectionId: 6 },
+            { id: 261, title: "Abandono de Material Sensível", description: "Abandonar material classificado ou sensível.", penalty: "Detenção de 90 a 270 dias", keywords: ["abandono", "material", "sensível", "classificado"], sectionId: 6 },
+            { id: 262, title: "Perda de Documento Classificado", description: "Perder documento com classificação de sigilo.", penalty: "Detenção de 60 a 180 dias", keywords: ["perda", "documento", "classificado", "sigilo"], sectionId: 6 },
+            { id: 263, title: "Reprodução Irregular de Documento Sigiloso", description: "Reproduzir documento sigiloso sem autorização.", penalty: "Detenção de 60 a 180 dias", keywords: ["reprodução", "documento", "sigiloso", "autorização"], sectionId: 6 },
+            { id: 264, title: "Fotografia em Área Restrita", description: "Fotografar área restrita sem autorização.", penalty: "Detenção de 45 a 135 dias", keywords: ["fotografia", "área", "restrita", "imagem"], sectionId: 6 },
+            { id: 265, title: "Filmagem Irregular", description: "Filmar instalações ou operações sem autorização.", penalty: "Detenção de 60 a 180 dias", keywords: ["filmagem", "irregular", "instalações", "operações"], sectionId: 6 },
+            { id: 266, title: "Divulgação de Imagem Restrita", description: "Divulgar imagem de área ou operação restrita.", penalty: "Detenção de 90 a 270 dias", keywords: ["divulgação", "imagem", "restrita", "operação"], sectionId: 6 },
+            { id: 267, title: "Uso de Equipamento Eletrônico Proibido", description: "Usar equipamento eletrônico em área proibida.", penalty: "Detenção de 30 a 90 dias", keywords: ["equipamento", "eletrônico", "proibido", "área"], sectionId: 6 },
+            { id: 268, title: "Falha de Segurança de Perímetro", description: "Causar falha na segurança do perímetro.", penalty: "Detenção de 60 a 180 dias", keywords: ["falha", "segurança", "perímetro", "brecha"], sectionId: 6 },
+            { id: 269, title: "Negligência em Controle de Acesso", description: "Negligenciar controle de acesso à unidade.", penalty: "Detenção de 45 a 135 dias", keywords: ["negligência", "controle", "acesso", "entrada"], sectionId: 6 },
+            { id: 270, title: "Falha no Sistema de Vigilância", description: "Causar falha no sistema de vigilância.", penalty: "Detenção de 60 a 180 dias", keywords: ["falha", "sistema", "vigilância", "monitoramento"], sectionId: 6 },
+            { id: 271, title: "Desativação de Alarme", description: "Desativar sistema de alarme sem autorização.", penalty: "Detenção de 45 a 135 dias", keywords: ["desativação", "alarme", "sistema", "autorização"], sectionId: 6 },
+            { id: 272, title: "Sabotagem de Sistema de Segurança", description: "Sabotar sistema de segurança da unidade.", penalty: "Detenção de 180 a 365 dias", keywords: ["sabotagem", "sistema", "segurança", "unidade"], sectionId: 6 },
+            { id: 273, title: "Violação de Protocolo de Emergência", description: "Violar protocolo durante emergência.", penalty: "Detenção de 60 a 180 dias", keywords: ["violação", "protocolo", "emergência", "procedimento"], sectionId: 6 },
+            { id: 274, title: "Falso Alarme", description: "Acionar alarme de emergência falsamente.", penalty: "Detenção de 30 a 90 dias", keywords: ["falso", "alarme", "emergência", "acionamento"], sectionId: 6 },
+            { id: 275, title: "Obstrução de Rota de Evacuação", description: "Obstruir rota de evacuação de emergência.", penalty: "Detenção de 45 a 135 dias", keywords: ["obstrução", "rota", "evacuação", "emergência"], sectionId: 6 },
+            { id: 276, title: "Negligência em Prevenção de Incêndio", description: "Negligenciar medidas de prevenção de incêndio.", penalty: "Detenção de 30 a 90 dias", keywords: ["negligência", "prevenção", "incêndio", "segurança"], sectionId: 6 },
+            { id: 277, title: "Mau Uso de Equipamento de Emergência", description: "Usar equipamento de emergência indevidamente.", penalty: "Detenção de 20 a 60 dias", keywords: ["mau uso", "equipamento", "emergência", "indevido"], sectionId: 6 },
+            { id: 278, title: "Dano a Equipamento de Segurança", description: "Danificar equipamento de segurança ou emergência.", penalty: "Detenção de 60 a 180 dias", keywords: ["dano", "equipamento", "segurança", "emergência"], sectionId: 6 },
+            { id: 279, title: "Ocultação de Vulnerabilidade", description: "Ocultar vulnerabilidade de segurança conhecida.", penalty: "Detenção de 45 a 135 dias", keywords: ["ocultação", "vulnerabilidade", "segurança", "falha"], sectionId: 6 },
+            { id: 280, title: "Omissão de Risco", description: "Omitir comunicação sobre risco à segurança.", penalty: "Detenção de 60 a 180 dias", keywords: ["omissão", "risco", "segurança", "comunicação"], sectionId: 6 },
+            { id: 281, title: "Exposição de Ponto Sensível", description: "Expor localização de ponto sensível.", penalty: "Detenção de 90 a 270 dias", keywords: ["exposição", "ponto", "sensível", "localização"], sectionId: 6 },
+            { id: 282, title: "Revelação de Rotina de Segurança", description: "Revelar rotina de segurança a não autorizados.", penalty: "Detenção de 60 a 180 dias", keywords: ["revelação", "rotina", "segurança", "procedimento"], sectionId: 6 },
+            { id: 283, title: "Comprometimento de Identificação", description: "Comprometer sistema de identificação.", penalty: "Detenção de 45 a 135 dias", keywords: ["comprometimento", "identificação", "sistema", "acesso"], sectionId: 6 },
+            { id: 284, title: "Empréstimo de Credencial", description: "Emprestar credencial de acesso a terceiros.", penalty: "Detenção de 30 a 90 dias", keywords: ["empréstimo", "credencial", "acesso", "terceiros"], sectionId: 6 },
+            { id: 285, title: "Falsificação de Credencial", description: "Falsificar credencial de acesso.", penalty: "Detenção de 90 a 270 dias", keywords: ["falsificação", "credencial", "acesso", "documento"], sectionId: 6 },
+            { id: 286, title: "Acesso Fraudulento", description: "Obter acesso mediante fraude.", penalty: "Detenção de 60 a 180 dias", keywords: ["acesso", "fraudulento", "fraude", "entrada"], sectionId: 6 },
+            { id: 287, title: "Permanência Oculta", description: "Permanecer oculto em área da unidade.", penalty: "Detenção de 45 a 135 dias", keywords: ["permanência", "oculta", "escondido", "área"], sectionId: 6 },
+            { id: 288, title: "Auxílio à Invasão", description: "Auxiliar invasão de área restrita.", penalty: "Detenção de 90 a 270 dias", keywords: ["auxílio", "invasão", "área", "restrita"], sectionId: 6 },
+            { id: 289, title: "Planejamento de Invasão", description: "Planejar invasão de área restrita.", penalty: "Detenção de 120 a 300 dias", keywords: ["planejamento", "invasão", "área", "restrita"], sectionId: 6 },
+            { id: 290, title: "Tentativa de Invasão", description: "Tentar invadir área restrita.", penalty: "Detenção de 60 a 180 dias", keywords: ["tentativa", "invasão", "área", "restrita"], sectionId: 6 },
+            { id: 291, title: "Resistência à Revista", description: "Resistir a procedimento de revista.", penalty: "Detenção de 30 a 90 dias", keywords: ["resistência", "revista", "procedimento", "busca"], sectionId: 6 },
+            { id: 292, title: "Obstrução de Fiscalização", description: "Obstruir fiscalização de segurança.", penalty: "Detenção de 45 a 135 dias", keywords: ["obstrução", "fiscalização", "segurança", "impedimento"], sectionId: 6 },
+            { id: 293, title: "Omissão em Fiscalização", description: "Omitir-se em fiscalização devida.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "fiscalização", "devida", "negligência"], sectionId: 6 },
+            { id: 294, title: "Liberação Indevida de Veículo", description: "Liberar veículo sem fiscalização devida.", penalty: "Detenção de 30 a 90 dias", keywords: ["liberação", "veículo", "fiscalização", "indevida"], sectionId: 6 },
+            { id: 295, title: "Transporte Irregular de Material", description: "Transportar material sem autorização.", penalty: "Detenção de 45 a 135 dias", keywords: ["transporte", "irregular", "material", "autorização"], sectionId: 6 },
+            { id: 296, title: "Retirada Irregular de Material", description: "Retirar material da unidade irregularmente.", penalty: "Detenção de 60 a 180 dias", keywords: ["retirada", "irregular", "material", "unidade"], sectionId: 6 },
+            { id: 297, title: "Armazenamento Irregular", description: "Armazenar material de forma irregular.", penalty: "Detenção de 30 a 90 dias", keywords: ["armazenamento", "irregular", "material", "guarda"], sectionId: 6 },
+            { id: 298, title: "Violação de Lacre", description: "Violar lacre de segurança.", penalty: "Detenção de 45 a 135 dias", keywords: ["violação", "lacre", "segurança", "rompimento"], sectionId: 6 },
+            { id: 299, title: "Adulteração de Registro de Segurança", description: "Adulterar registro de controle de segurança.", penalty: "Detenção de 60 a 180 dias", keywords: ["adulteração", "registro", "segurança", "controle"], sectionId: 6 },
+            { id: 300, title: "Omissão de Incidente de Segurança", description: "Omitir registro de incidente de segurança.", penalty: "Detenção de 45 a 135 dias", keywords: ["omissão", "incidente", "segurança", "registro"], sectionId: 6 },
+
+            // TÍTULO VII - Dos Crimes Contra a Ordem Pública (301-350)
+            { id: 301, title: "Perturbação da Ordem na Unidade", description: "Perturbar a ordem estabelecida na unidade.", penalty: "Detenção de 30 a 90 dias", keywords: ["perturbação", "ordem", "unidade", "desordem"], sectionId: 7 },
+            { id: 302, title: "Incitação à Desordem", description: "Incitar outros a perturbar a ordem.", penalty: "Detenção de 45 a 135 dias", keywords: ["incitação", "desordem", "perturbação", "aliciamento"], sectionId: 7 },
+            { id: 303, title: "Participação em Tumulto", description: "Participar de tumulto na unidade.", penalty: "Detenção de 30 a 90 dias", keywords: ["participação", "tumulto", "desordem", "confusão"], sectionId: 7 },
+            { id: 304, title: "Organização de Tumulto", description: "Organizar tumulto ou desordem.", penalty: "Detenção de 60 a 180 dias", keywords: ["organização", "tumulto", "desordem", "planejamento"], sectionId: 7 },
+            { id: 305, title: "Vandalismo", description: "Praticar vandalismo em instalações.", penalty: "Detenção de 45 a 135 dias", keywords: ["vandalismo", "instalações", "destruição", "depredação"], sectionId: 7 },
+            { id: 306, title: "Pichação", description: "Pichar instalações da unidade.", penalty: "Detenção de 20 a 60 dias", keywords: ["pichação", "instalações", "grafite", "unidade"], sectionId: 7 },
+            { id: 307, title: "Perturbação do Sossego", description: "Perturbar o sossego nos alojamentos.", penalty: "Detenção de 10 a 30 dias", keywords: ["perturbação", "sossego", "alojamentos", "barulho"], sectionId: 7 },
+            { id: 308, title: "Conduta Escandalosa", description: "Praticar conduta escandalosa em público.", penalty: "Detenção de 20 a 60 dias", keywords: ["conduta", "escandalosa", "público", "comportamento"], sectionId: 7 },
+            { id: 309, title: "Embriaguez Ostensiva", description: "Apresentar-se ostensivamente embriagado.", penalty: "Detenção de 15 a 45 dias", keywords: ["embriaguez", "ostensiva", "álcool", "comportamento"], sectionId: 7 },
+            { id: 310, title: "Uso de Uniforme em Situação Irregular", description: "Usar uniforme em situação inadequada.", penalty: "Detenção de 15 a 45 dias", keywords: ["uniforme", "irregular", "uso", "inadequado"], sectionId: 7 },
+            { id: 311, title: "Uso de Uniforme para Crime", description: "Usar uniforme para cometer crime.", penalty: "Detenção de 90 a 270 dias", keywords: ["uniforme", "crime", "uso", "ilícito"], sectionId: 7 },
+            { id: 312, title: "Desprestígio da Instituição", description: "Praticar ato que desprestigie a instituição.", penalty: "Detenção de 45 a 135 dias", keywords: ["desprestígio", "instituição", "imagem", "reputação"], sectionId: 7 },
+            { id: 313, title: "Publicação Irregular nas Redes Sociais", description: "Publicar conteúdo irregular identificando-se como militar.", penalty: "Detenção de 30 a 90 dias", keywords: ["publicação", "redes sociais", "irregular", "identificação"], sectionId: 7 },
+            { id: 314, title: "Vazamento de Informação para Imprensa", description: "Vazar informação institucional para imprensa.", penalty: "Detenção de 60 a 180 dias", keywords: ["vazamento", "informação", "imprensa", "mídia"], sectionId: 7 },
+            { id: 315, title: "Entrevista Irregular", description: "Conceder entrevista sem autorização.", penalty: "Detenção de 30 a 90 dias", keywords: ["entrevista", "irregular", "autorização", "mídia"], sectionId: 7 },
+            { id: 316, title: "Manifestação Irregular de Pensamento", description: "Manifestar opinião institucional sem autorização.", penalty: "Detenção de 20 a 60 dias", keywords: ["manifestação", "pensamento", "opinião", "institucional"], sectionId: 7 },
+            { id: 317, title: "Associação Criminosa", description: "Associar-se para praticar crimes.", penalty: "Detenção de 120 a 300 dias", keywords: ["associação", "criminosa", "organização", "crimes"], sectionId: 7 },
+            { id: 318, title: "Participação em Organização Irregular", description: "Participar de organização não autorizada.", penalty: "Detenção de 45 a 135 dias", keywords: ["participação", "organização", "irregular", "grupo"], sectionId: 7 },
+            { id: 319, title: "Formação de Quadrilha", description: "Formar quadrilha com outros militares.", penalty: "Detenção de 90 a 270 dias", keywords: ["quadrilha", "formação", "grupo", "criminoso"], sectionId: 7 },
+            { id: 320, title: "Liderança Criminosa", description: "Liderar grupo para práticas criminosas.", penalty: "Detenção de 150 a 300 dias", keywords: ["liderança", "criminosa", "grupo", "comando"], sectionId: 7 },
+            { id: 321, title: "Recrutamento para Crime", description: "Recrutar outros para práticas criminosas.", penalty: "Detenção de 90 a 270 dias", keywords: ["recrutamento", "crime", "aliciamento", "convite"], sectionId: 7 },
+            { id: 322, title: "Favorecimento de Criminoso", description: "Auxiliar criminoso a escapar de punição.", penalty: "Detenção de 60 a 180 dias", keywords: ["favorecimento", "criminoso", "auxílio", "fuga"], sectionId: 7 },
+            { id: 323, title: "Ocultação de Criminoso", description: "Ocultar criminoso procurado.", penalty: "Detenção de 90 a 270 dias", keywords: ["ocultação", "criminoso", "procurado", "abrigo"], sectionId: 7 },
+            { id: 324, title: "Lavagem de Dinheiro", description: "Participar de lavagem de dinheiro.", penalty: "Detenção de 180 a 365 dias", keywords: ["lavagem", "dinheiro", "crime", "ocultação"], sectionId: 7 },
+            { id: 325, title: "Ocultação de Produto de Crime", description: "Ocultar produto obtido criminosamente.", penalty: "Detenção de 60 a 180 dias", keywords: ["ocultação", "produto", "crime", "esconder"], sectionId: 7 },
+            { id: 326, title: "Comércio Irregular na Unidade", description: "Praticar comércio não autorizado.", penalty: "Detenção de 30 a 90 dias", keywords: ["comércio", "irregular", "venda", "unidade"], sectionId: 7 },
+            { id: 327, title: "Agiotagem", description: "Praticar agiotagem com companheiros.", penalty: "Detenção de 60 a 180 dias", keywords: ["agiotagem", "empréstimo", "juros", "abusivo"], sectionId: 7 },
+            { id: 328, title: "Jogo de Azar", description: "Participar de jogo de azar na unidade.", penalty: "Detenção de 20 a 60 dias", keywords: ["jogo", "azar", "aposta", "unidade"], sectionId: 7 },
+            { id: 329, title: "Organização de Jogo de Azar", description: "Organizar jogo de azar na unidade.", penalty: "Detenção de 45 a 135 dias", keywords: ["organização", "jogo", "azar", "apostas"], sectionId: 7 },
+            { id: 330, title: "Rufianismo", description: "Explorar prostituição em área militar.", penalty: "Detenção de 180 a 365 dias", keywords: ["rufianismo", "prostituição", "exploração", "lenocínio"], sectionId: 7 },
+            { id: 331, title: "Facilitação de Prostituição", description: "Facilitar prostituição em área militar.", penalty: "Detenção de 120 a 300 dias", keywords: ["facilitação", "prostituição", "área", "militar"], sectionId: 7 },
+            { id: 332, title: "Casa de Prostituição", description: "Manter ou frequentar local de prostituição em área militar.", penalty: "Detenção de 90 a 270 dias", keywords: ["casa", "prostituição", "local", "frequentar"], sectionId: 7 },
+            { id: 333, title: "Tráfico de Pessoas", description: "Participar de tráfico de pessoas.", penalty: "Expulsão e processo criminal", keywords: ["tráfico", "pessoas", "exploração", "humano"], sectionId: 7 },
+            { id: 334, title: "Trabalho Escravo", description: "Submeter pessoa a trabalho escravo.", penalty: "Expulsão e processo criminal", keywords: ["trabalho", "escravo", "condições", "degradantes"], sectionId: 7 },
+            { id: 335, title: "Exploração de Subordinado", description: "Explorar trabalho irregular de subordinado.", penalty: "Detenção de 90 a 270 dias", keywords: ["exploração", "subordinado", "trabalho", "irregular"], sectionId: 7 },
+            { id: 336, title: "Constrangimento para Serviço Particular", description: "Constranger subordinado a serviço particular.", penalty: "Detenção de 60 a 180 dias", keywords: ["constrangimento", "serviço", "particular", "abuso"], sectionId: 7 },
+            { id: 337, title: "Ameaça para Silêncio", description: "Ameaçar testemunha ou vítima para silêncio.", penalty: "Detenção de 90 a 270 dias", keywords: ["ameaça", "silêncio", "testemunha", "vítima"], sectionId: 7 },
+            { id: 338, title: "Coação de Denunciante", description: "Coagir pessoa a não apresentar denúncia.", penalty: "Detenção de 60 a 180 dias", keywords: ["coação", "denunciante", "denúncia", "intimidação"], sectionId: 7 },
+            { id: 339, title: "Represália a Denunciante", description: "Represar pessoa que apresentou denúncia.", penalty: "Detenção de 90 a 270 dias", keywords: ["represália", "denunciante", "vingança", "retaliação"], sectionId: 7 },
+            { id: 340, title: "Violação de Sigilo de Denúncia", description: "Violar sigilo de denúncia anônima.", penalty: "Detenção de 60 a 180 dias", keywords: ["violação", "sigilo", "denúncia", "anônima"], sectionId: 7 },
+            { id: 341, title: "Obstrução de Investigação", description: "Obstruir investigação em curso.", penalty: "Detenção de 90 a 270 dias", keywords: ["obstrução", "investigação", "impedimento", "processo"], sectionId: 7 },
+            { id: 342, title: "Destruição de Provas", description: "Destruir provas de crime.", penalty: "Detenção de 120 a 300 dias", keywords: ["destruição", "provas", "crime", "evidência"], sectionId: 7 },
+            { id: 343, title: "Falso Álibi", description: "Fornecer falso álibi a investigado.", penalty: "Detenção de 45 a 135 dias", keywords: ["falso", "álibi", "investigado", "mentira"], sectionId: 7 },
+            { id: 344, title: "Acobertamento", description: "Acobertar crime de companheiro.", penalty: "Detenção de 60 a 180 dias", keywords: ["acobertamento", "crime", "companheiro", "proteção"], sectionId: 7 },
+            { id: 345, title: "Conivência Criminosa", description: "Ser conivente com prática criminosa.", penalty: "Detenção de 45 a 135 dias", keywords: ["conivência", "criminosa", "omissão", "cumplicidade"], sectionId: 7 },
+            { id: 346, title: "Omissão de Comunicação de Crime", description: "Omitir comunicação de crime conhecido.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "comunicação", "crime", "conhecimento"], sectionId: 7 },
+            { id: 347, title: "Falsa Identidade Criminal", description: "Assumir falsa identidade em investigação.", penalty: "Detenção de 45 a 135 dias", keywords: ["falsa", "identidade", "investigação", "mentira"], sectionId: 7 },
+            { id: 348, title: "Uso de Documento Falso em Processo", description: "Usar documento falso em processo.", penalty: "Detenção de 90 a 270 dias", keywords: ["uso", "documento", "falso", "processo"], sectionId: 7 },
+            { id: 349, title: "Fraude em Processo Disciplinar", description: "Fraudar processo disciplinar.", penalty: "Detenção de 90 a 270 dias", keywords: ["fraude", "processo", "disciplinar", "manipulação"], sectionId: 7 },
+            { id: 350, title: "Corrupção de Investigador", description: "Corromper investigador ou julgador.", penalty: "Detenção de 180 a 365 dias", keywords: ["corrupção", "investigador", "julgador", "suborno"], sectionId: 7 },
+
+            // TÍTULO VIII - Dos Crimes de Corrupção e Abuso de Poder (351-400)
+            { id: 351, title: "Abuso de Autoridade", description: "Abusar de autoridade funcional.", penalty: "Detenção de 60 a 180 dias", keywords: ["abuso", "autoridade", "funcional", "poder"], sectionId: 8 },
+            { id: 352, title: "Excesso de Poder", description: "Exceder os limites do poder conferido.", penalty: "Detenção de 45 a 135 dias", keywords: ["excesso", "poder", "limites", "atribuição"], sectionId: 8 },
+            { id: 353, title: "Desvio de Poder", description: "Usar poder para finalidade diversa.", penalty: "Detenção de 60 a 180 dias", keywords: ["desvio", "poder", "finalidade", "abuso"], sectionId: 8 },
+            { id: 354, title: "Arbitrariedade", description: "Praticar ato arbitrário contra subordinado.", penalty: "Detenção de 45 a 135 dias", keywords: ["arbitrariedade", "ato", "subordinado", "injusto"], sectionId: 8 },
+            { id: 355, title: "Punição Indevida", description: "Aplicar punição sem fundamentação legal.", penalty: "Detenção de 30 a 90 dias", keywords: ["punição", "indevida", "fundamentação", "ilegal"], sectionId: 8 },
+            { id: 356, title: "Perseguição Funcional", description: "Perseguir subordinado por motivo pessoal.", penalty: "Detenção de 60 a 180 dias", keywords: ["perseguição", "funcional", "pessoal", "vingança"], sectionId: 8 },
+            { id: 357, title: "Retaliação", description: "Retaliar subordinado que apresentou denúncia.", penalty: "Detenção de 90 a 270 dias", keywords: ["retaliação", "denúncia", "subordinado", "vingança"], sectionId: 8 },
+            { id: 358, title: "Cobrança de Propina", description: "Cobrar propina para realizar ato de ofício.", penalty: "Detenção de 150 a 300 dias", keywords: ["propina", "cobrança", "suborno", "ofício"], sectionId: 8 },
+            { id: 359, title: "Recebimento de Propina", description: "Receber propina para praticar ou omitir ato.", penalty: "Detenção de 180 a 365 dias", keywords: ["recebimento", "propina", "suborno", "corrupção"], sectionId: 8 },
+            { id: 360, title: "Oferta de Propina", description: "Oferecer propina a superior ou companheiro.", penalty: "Detenção de 120 a 300 dias", keywords: ["oferta", "propina", "suborno", "corrupção"], sectionId: 8 },
+            { id: 361, title: "Intermediação de Corrupção", description: "Intermediar pagamento de propina.", penalty: "Detenção de 120 a 300 dias", keywords: ["intermediação", "corrupção", "propina", "mediação"], sectionId: 8 },
+            { id: 362, title: "Aceitação de Presente", description: "Aceitar presente em razão do cargo.", penalty: "Detenção de 30 a 90 dias", keywords: ["presente", "aceitação", "cargo", "benefício"], sectionId: 8 },
+            { id: 363, title: "Favorecimento Pessoal", description: "Favorecer pessoa em razão de relação pessoal.", penalty: "Detenção de 45 a 135 dias", keywords: ["favorecimento", "pessoal", "relação", "benefício"], sectionId: 8 },
+            { id: 364, title: "Indicação Irregular", description: "Indicar pessoa para cargo sem observar critérios.", penalty: "Detenção de 30 a 90 dias", keywords: ["indicação", "irregular", "cargo", "critérios"], sectionId: 8 },
+            { id: 365, title: "Nomeação Irregular", description: "Nomear pessoa para função sem observar requisitos.", penalty: "Detenção de 60 a 180 dias", keywords: ["nomeação", "irregular", "função", "requisitos"], sectionId: 8 },
+            { id: 366, title: "Promoção Irregular", description: "Promover militar sem observar critérios estabelecidos.", penalty: "Detenção de 90 a 270 dias", keywords: ["promoção", "irregular", "critérios", "favorecimento"], sectionId: 8 },
+            { id: 367, title: "Transferência Punitiva", description: "Transferir militar como forma de punição oculta.", penalty: "Detenção de 45 a 135 dias", keywords: ["transferência", "punitiva", "punição", "oculta"], sectionId: 8 },
+            { id: 368, title: "Designação Arbitrária", description: "Designar militar para função inadequada por perseguição.", penalty: "Detenção de 45 a 135 dias", keywords: ["designação", "arbitrária", "função", "perseguição"], sectionId: 8 },
+            { id: 369, title: "Desvio de Função", description: "Desviar militar de sua função para atividade irregular.", penalty: "Detenção de 30 a 90 dias", keywords: ["desvio", "função", "atividade", "irregular"], sectionId: 8 },
+            { id: 370, title: "Uso de Subordinado para Serviço Particular", description: "Usar subordinado para serviços particulares.", penalty: "Detenção de 45 a 135 dias", keywords: ["subordinado", "serviço", "particular", "uso"], sectionId: 8 },
+            { id: 371, title: "Exigência de Serviço Extraordinário", description: "Exigir serviço extraordinário desnecessário.", penalty: "Detenção de 20 a 60 dias", keywords: ["exigência", "serviço", "extraordinário", "abuso"], sectionId: 8 },
+            { id: 372, title: "Negação de Direito", description: "Negar direito garantido a subordinado.", penalty: "Detenção de 30 a 90 dias", keywords: ["negação", "direito", "subordinado", "garantia"], sectionId: 8 },
+            { id: 373, title: "Obstrução de Reclamação", description: "Obstruir o direito de reclamação de subordinado.", penalty: "Detenção de 45 a 135 dias", keywords: ["obstrução", "reclamação", "direito", "subordinado"], sectionId: 8 },
+            { id: 374, title: "Impedimento de Defesa", description: "Impedir subordinado de exercer defesa.", penalty: "Detenção de 60 a 180 dias", keywords: ["impedimento", "defesa", "subordinado", "processo"], sectionId: 8 },
+            { id: 375, title: "Violação de Devido Processo", description: "Violar o devido processo em procedimento disciplinar.", penalty: "Detenção de 60 a 180 dias", keywords: ["violação", "processo", "disciplinar", "procedimento"], sectionId: 8 },
+            { id: 376, title: "Falsidade em Processo", description: "Inserir falsidade em processo disciplinar.", penalty: "Detenção de 90 a 270 dias", keywords: ["falsidade", "processo", "disciplinar", "documento"], sectionId: 8 },
+            { id: 377, title: "Manipulação de Testemunha", description: "Manipular testemunha em processo.", penalty: "Detenção de 90 a 270 dias", keywords: ["manipulação", "testemunha", "processo", "influência"], sectionId: 8 },
+            { id: 378, title: "Ameaça a Testemunha", description: "Ameaçar testemunha para alterar depoimento.", penalty: "Detenção de 120 a 300 dias", keywords: ["ameaça", "testemunha", "depoimento", "intimidação"], sectionId: 8 },
+            { id: 379, title: "Suborno de Testemunha", description: "Subornar testemunha para alterar depoimento.", penalty: "Detenção de 120 a 300 dias", keywords: ["suborno", "testemunha", "depoimento", "corrupção"], sectionId: 8 },
+            { id: 380, title: "Falso Testemunho", description: "Prestar falso testemunho em processo.", penalty: "Detenção de 60 a 180 dias", keywords: ["falso", "testemunho", "processo", "mentira"], sectionId: 8 },
+            { id: 381, title: "Denunciação Caluniosa", description: "Fazer denúncia que sabe ser falsa.", penalty: "Detenção de 90 a 270 dias", keywords: ["denunciação", "caluniosa", "falsa", "acusação"], sectionId: 8 },
+            { id: 382, title: "Comunicação Falsa de Crime", description: "Comunicar crime que sabe não ter ocorrido.", penalty: "Detenção de 30 a 90 dias", keywords: ["comunicação", "falsa", "crime", "notícia"], sectionId: 8 },
+            { id: 383, title: "Auto-Acusação Falsa", description: "Acusar-se de crime que não cometeu.", penalty: "Detenção de 20 a 60 dias", keywords: ["auto-acusação", "falsa", "crime", "confissão"], sectionId: 8 },
+            { id: 384, title: "Fraude Processual", description: "Fraudar processo para prejudicar investigação.", penalty: "Detenção de 90 a 270 dias", keywords: ["fraude", "processual", "investigação", "prejuízo"], sectionId: 8 },
+            { id: 385, title: "Destruição de Prova", description: "Destruir prova de processo disciplinar ou criminal.", penalty: "Detenção de 120 a 300 dias", keywords: ["destruição", "prova", "processo", "evidência"], sectionId: 8 },
+            { id: 386, title: "Ocultação de Prova", description: "Ocultar prova de processo.", penalty: "Detenção de 90 a 270 dias", keywords: ["ocultação", "prova", "processo", "esconder"], sectionId: 8 },
+            { id: 387, title: "Alteração de Prova", description: "Alterar prova de processo.", penalty: "Detenção de 120 a 300 dias", keywords: ["alteração", "prova", "processo", "adulteração"], sectionId: 8 },
+            { id: 388, title: "Fabricação de Prova", description: "Fabricar prova falsa.", penalty: "Detenção de 150 a 300 dias", keywords: ["fabricação", "prova", "falsa", "criação"], sectionId: 8 },
+            { id: 389, title: "Patrocínio Infiel", description: "Trair interesse de quem deve defender.", penalty: "Detenção de 60 a 180 dias", keywords: ["patrocínio", "infiel", "traição", "defesa"], sectionId: 8 },
+            { id: 390, title: "Patrocínio Simultâneo", description: "Patrocinar interesse de partes contrárias.", penalty: "Detenção de 45 a 135 dias", keywords: ["patrocínio", "simultâneo", "partes", "conflito"], sectionId: 8 },
+            { id: 391, title: "Exploração de Erro", description: "Explorar erro de subordinado para benefício próprio.", penalty: "Detenção de 45 a 135 dias", keywords: ["exploração", "erro", "subordinado", "benefício"], sectionId: 8 },
+            { id: 392, title: "Desvio de Finalidade", description: "Usar poder para finalidade diversa da autorizada.", penalty: "Detenção de 60 a 180 dias", keywords: ["desvio", "finalidade", "poder", "autorização"], sectionId: 8 },
+            { id: 393, title: "Excesso de Poder", description: "Exceder os limites do poder conferido.", penalty: "Detenção de 45 a 135 dias", keywords: ["excesso", "poder", "limites", "atribuição"], sectionId: 8 },
+            { id: 394, title: "Usurpação de Poder", description: "Exercer poder não conferido.", penalty: "Detenção de 90 a 270 dias", keywords: ["usurpação", "poder", "exercício", "indevido"], sectionId: 8 },
+            { id: 395, title: "Delegação Irregular", description: "Delegar poder de forma irregular.", penalty: "Detenção de 30 a 90 dias", keywords: ["delegação", "irregular", "poder", "atribuição"], sectionId: 8 },
+            { id: 396, title: "Avocar Competência Alheia", description: "Avocar competência de outro sem autorização.", penalty: "Detenção de 30 a 90 dias", keywords: ["avocar", "competência", "alheia", "autorização"], sectionId: 8 },
+            { id: 397, title: "Omissão Funcional", description: "Omitir-se de agir quando obrigado.", penalty: "Detenção de 30 a 90 dias", keywords: ["omissão", "funcional", "obrigação", "dever"], sectionId: 8 },
+            { id: 398, title: "Negligência Administrativa", description: "Agir com negligência em ato administrativo.", penalty: "Detenção de 20 a 60 dias", keywords: ["negligência", "administrativa", "ato", "descuido"], sectionId: 8 },
+            { id: 399, title: "Improbidade", description: "Praticar ato que atente contra princípios da administração.", penalty: "Detenção de 120 a 300 dias", keywords: ["improbidade", "administração", "princípios", "ética"], sectionId: 8 },
+            { id: 400, title: "Enriquecimento sem Causa", description: "Enriquecer-se indevidamente em razão do cargo.", penalty: "Detenção de 180 a 365 dias", keywords: ["enriquecimento", "causa", "cargo", "ilícito"], sectionId: 8 },
+
+            // TÍTULO IX - Dos Crimes de Traição e Espionagem (401-450)
+            { id: 401, title: "Traição", description: "Trair a instituição em favor de força inimiga.", penalty: "Expulsão e processo criminal", keywords: ["traição", "instituição", "inimigo", "deserção"], sectionId: 9 },
+            { id: 402, title: "Traição Qualificada", description: "Traição resultando em morte ou grave prejuízo.", penalty: "Expulsão e processo criminal", keywords: ["traição", "qualificada", "morte", "prejuízo"], sectionId: 9 },
+            { id: 403, title: "Tentativa de Traição", description: "Tentar trair sem consumar o ato.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["tentativa", "traição", "consumação", "ato"], sectionId: 9 },
+            { id: 404, title: "Espionagem Ativa", description: "Praticar espionagem em favor de terceiros.", penalty: "Expulsão e processo criminal", keywords: ["espionagem", "ativa", "terceiros", "informação"], sectionId: 9 },
+            { id: 405, title: "Espionagem Passiva", description: "Permitir que terceiros obtenham informações sigilosas.", penalty: "Detenção de 180 a 365 dias", keywords: ["espionagem", "passiva", "informações", "sigilosas"], sectionId: 9 },
+            { id: 406, title: "Recrutamento para Espionagem", description: "Recrutar companheiro para atividade de espionagem.", penalty: "Expulsão e processo criminal", keywords: ["recrutamento", "espionagem", "companheiro", "aliciamento"], sectionId: 9 },
+            { id: 407, title: "Aceitação de Recrutamento", description: "Aceitar recrutamento para espionagem.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["aceitação", "recrutamento", "espionagem", "adesão"], sectionId: 9 },
+            { id: 408, title: "Transmissão de Segredo ao Inimigo", description: "Transmitir informação sigilosa a força hostil.", penalty: "Expulsão e processo criminal", keywords: ["transmissão", "segredo", "inimigo", "hostil"], sectionId: 9 },
+            { id: 409, title: "Coleta de Informações para o Inimigo", description: "Coletar informações para transmitir ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["coleta", "informações", "inimigo", "inteligência"], sectionId: 9 },
+            { id: 410, title: "Contato com Agente Inimigo", description: "Manter contato com agente de força hostil.", penalty: "Detenção de 180 a 365 dias", keywords: ["contato", "agente", "inimigo", "comunicação"], sectionId: 9 },
+            { id: 411, title: "Recebimento de Instruções do Inimigo", description: "Receber instruções de força hostil.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["recebimento", "instruções", "inimigo", "ordem"], sectionId: 9 },
+            { id: 412, title: "Cumprimento de Ordem Inimiga", description: "Cumprir ordem recebida de força hostil.", penalty: "Expulsão e processo criminal", keywords: ["cumprimento", "ordem", "inimiga", "execução"], sectionId: 9 },
+            { id: 413, title: "Sabotagem para o Inimigo", description: "Praticar sabotagem em favor de força hostil.", penalty: "Expulsão e processo criminal", keywords: ["sabotagem", "inimigo", "hostil", "destruição"], sectionId: 9 },
+            { id: 414, title: "Destruição de Defesa", description: "Destruir defesa para facilitar ação inimiga.", penalty: "Expulsão e processo criminal", keywords: ["destruição", "defesa", "inimigo", "facilitação"], sectionId: 9 },
+            { id: 415, title: "Entrega de Posição", description: "Entregar posição ao inimigo.", penalty: "Expulsão e processo criminal", keywords: ["entrega", "posição", "inimigo", "rendição"], sectionId: 9 },
+            { id: 416, title: "Entrega de Tropas", description: "Entregar tropas sob comando ao inimigo.", penalty: "Expulsão e processo criminal", keywords: ["entrega", "tropas", "inimigo", "rendição"], sectionId: 9 },
+            { id: 417, title: "Entrega de Material Bélico", description: "Entregar armamento ou material bélico ao inimigo.", penalty: "Expulsão e processo criminal", keywords: ["entrega", "material", "bélico", "inimigo"], sectionId: 9 },
+            { id: 418, title: "Revelação de Código", description: "Revelar código de comunicação ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["revelação", "código", "comunicação", "inimigo"], sectionId: 9 },
+            { id: 419, title: "Revelação de Senha", description: "Revelar senha de acesso a sistema ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["revelação", "senha", "sistema", "inimigo"], sectionId: 9 },
+            { id: 420, title: "Revelação de Posição de Tropas", description: "Revelar localização de tropas ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["revelação", "posição", "tropas", "localização"], sectionId: 9 },
+            { id: 421, title: "Revelação de Plano de Defesa", description: "Revelar plano de defesa ao inimigo.", penalty: "Expulsão e processo criminal", keywords: ["revelação", "plano", "defesa", "estratégia"], sectionId: 9 },
+            { id: 422, title: "Revelação de Vulnerabilidade", description: "Revelar vulnerabilidade de defesa ao inimigo.", penalty: "Expulsão e processo criminal", keywords: ["revelação", "vulnerabilidade", "defesa", "fraqueza"], sectionId: 9 },
+            { id: 423, title: "Facilitar Infiltração", description: "Facilitar infiltração de agente inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["facilitar", "infiltração", "agente", "inimigo"], sectionId: 9 },
+            { id: 424, title: "Abrigar Agente Inimigo", description: "Abrigar ou proteger agente de força hostil.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["abrigar", "agente", "inimigo", "proteção"], sectionId: 9 },
+            { id: 425, title: "Transporte de Agente Inimigo", description: "Transportar agente inimigo em área militar.", penalty: "Detenção de 180 a 365 dias", keywords: ["transporte", "agente", "inimigo", "área"], sectionId: 9 },
+            { id: 426, title: "Fornecimento de Recursos ao Inimigo", description: "Fornecer recursos materiais ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["fornecimento", "recursos", "inimigo", "material"], sectionId: 9 },
+            { id: 427, title: "Propaganda Inimiga", description: "Distribuir propaganda de força hostil.", penalty: "Detenção de 120 a 300 dias", keywords: ["propaganda", "inimiga", "distribuição", "hostil"], sectionId: 9 },
+            { id: 428, title: "Incitação à Rendição", description: "Incitar companheiros a se renderem ao inimigo.", penalty: "Detenção de 180 a 365 dias", keywords: ["incitação", "rendição", "inimigo", "desistência"], sectionId: 9 },
+            { id: 429, title: "Desmoralização de Tropas", description: "Propagar boatos para desmoralizar tropas.", penalty: "Detenção de 90 a 270 dias", keywords: ["desmoralização", "tropas", "boatos", "moral"], sectionId: 9 },
+            { id: 430, title: "Criação de Pânico", description: "Criar pânico entre tropas em situação de combate.", penalty: "Detenção de 120 a 300 dias", keywords: ["pânico", "tropas", "combate", "medo"], sectionId: 9 },
+            { id: 431, title: "Abandono de Missão Secreta", description: "Abandonar missão sigilosa revelando informações.", penalty: "Detenção de 180 a 365 dias", keywords: ["abandono", "missão", "secreta", "sigilosa"], sectionId: 9 },
+            { id: 432, title: "Captura Voluntária", description: "Permitir-se capturar voluntariamente pelo inimigo.", penalty: "Detenção de 120 a 300 dias", keywords: ["captura", "voluntária", "inimigo", "entrega"], sectionId: 9 },
+            { id: 433, title: "Colaboração Durante Cativeiro", description: "Colaborar com inimigo durante cativeiro.", penalty: "Detenção de 180 a 365 dias", keywords: ["colaboração", "cativeiro", "inimigo", "prisão"], sectionId: 9 },
+            { id: 434, title: "Delação de Companheiros", description: "Delatar companheiros ao inimigo.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["delação", "companheiros", "inimigo", "traição"], sectionId: 9 },
+            { id: 435, title: "Recusa de Tentativa de Fuga", description: "Recusar-se a participar de tentativa de fuga do cativeiro.", penalty: "Detenção de 30 a 90 dias", keywords: ["recusa", "fuga", "cativeiro", "tentativa"], sectionId: 9 },
+            { id: 436, title: "Obstrução de Fuga de Companheiro", description: "Obstruir tentativa de fuga de companheiro.", penalty: "Detenção de 120 a 300 dias", keywords: ["obstrução", "fuga", "companheiro", "impedimento"], sectionId: 9 },
+            { id: 437, title: "Delação de Plano de Fuga", description: "Delatar plano de fuga ao inimigo.", penalty: "Detenção de 180 a 365 dias", keywords: ["delação", "plano", "fuga", "inimigo"], sectionId: 9 },
+            { id: 438, title: "Auxílio ao Inimigo Após Liberação", description: "Auxiliar força hostil após libertação.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["auxílio", "inimigo", "liberação", "colaboração"], sectionId: 9 },
+            { id: 439, title: "Manutenção de Vínculos com Inimigo", description: "Manter vínculos com força hostil após retorno.", penalty: "Detenção de 180 a 365 dias", keywords: ["vínculos", "inimigo", "retorno", "contato"], sectionId: 9 },
+            { id: 440, title: "Ocultação de Informação sobre Inimigo", description: "Ocultar informação obtida sobre força hostil.", penalty: "Detenção de 90 a 270 dias", keywords: ["ocultação", "informação", "inimigo", "sonegação"], sectionId: 9 },
+            { id: 441, title: "Falsificação de Relatório de Missão", description: "Falsificar relatório sobre contato com inimigo.", penalty: "Detenção de 120 a 300 dias", keywords: ["falsificação", "relatório", "missão", "inimigo"], sectionId: 9 },
+            { id: 442, title: "Tentativa de Recrutamento de Companheiro", description: "Tentar recrutar companheiro para espionagem.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["tentativa", "recrutamento", "companheiro", "espionagem"], sectionId: 9 },
+            { id: 443, title: "Instalação de Equipamento de Escuta", description: "Instalar equipamento de escuta para terceiros.", penalty: "Detenção de 180 a 365 dias", keywords: ["instalação", "equipamento", "escuta", "espionagem"], sectionId: 9 },
+            { id: 444, title: "Fotografar para Inimigo", description: "Fotografar instalação para transmitir ao inimigo.", penalty: "Detenção de 180 a 365 dias", keywords: ["fotografar", "instalação", "inimigo", "espionagem"], sectionId: 9 },
+            { id: 445, title: "Mapeamento para Inimigo", description: "Realizar mapeamento de área para força hostil.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["mapeamento", "área", "inimigo", "reconhecimento"], sectionId: 9 },
+            { id: 446, title: "Preparação de Atentado", description: "Preparar atentado contra instalação ou pessoal.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["preparação", "atentado", "instalação", "terrorismo"], sectionId: 9 },
+            { id: 447, title: "Participação em Atentado", description: "Participar de atentado contra a unidade.", penalty: "Expulsão e processo criminal", keywords: ["participação", "atentado", "unidade", "terrorismo"], sectionId: 9 },
+            { id: 448, title: "Planejamento de Golpe", description: "Planejar golpe contra estrutura de comando.", penalty: "Expulsão e processo criminal", keywords: ["planejamento", "golpe", "comando", "insurreição"], sectionId: 9 },
+            { id: 449, title: "Participação em Golpe", description: "Participar de golpe contra autoridade constituída.", penalty: "Expulsão e processo criminal", keywords: ["participação", "golpe", "autoridade", "insurreição"], sectionId: 9 },
+            { id: 450, title: "Financiamento de Atividade Subversiva", description: "Financiar atividade contra a instituição.", penalty: "Detenção de 365 dias ou expulsão", keywords: ["financiamento", "atividade", "subversiva", "patrocínio"], sectionId: 9 },
+
+            // TÍTULO X - Das Disposições Gerais e Agravantes (451-500)
+            { id: 451, title: "Reincidência Geral", description: "Cometer novo crime após condenação anterior.", penalty: "Aumento de 1/3 na pena", keywords: ["reincidência", "novo", "crime", "condenação"], sectionId: 10 },
+            { id: 452, title: "Reincidência Específica", description: "Cometer o mesmo crime após condenação anterior.", penalty: "Aumento de 1/2 na pena", keywords: ["reincidência", "específica", "mesmo", "crime"], sectionId: 10 },
+            { id: 453, title: "Concurso de Crimes", description: "Praticar mais de um crime na mesma ocasião.", penalty: "Soma ou aumento das penas", keywords: ["concurso", "crimes", "múltiplos", "ocasião"], sectionId: 10 },
+            { id: 454, title: "Crime Continuado", description: "Praticar mesma conduta criminosa reiteradamente.", penalty: "Pena mais grave aumentada", keywords: ["crime", "continuado", "reiterado", "conduta"], sectionId: 10 },
+            { id: 455, title: "Agravante por Superioridade", description: "Cometer crime valendo-se de superioridade hierárquica.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "superioridade", "hierárquica", "abuso"], sectionId: 10 },
+            { id: 456, title: "Agravante por Arma", description: "Cometer crime com emprego de arma.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "arma", "emprego", "violência"], sectionId: 10 },
+            { id: 457, title: "Agravante por Serviço", description: "Cometer crime durante o serviço.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "serviço", "durante", "função"], sectionId: 10 },
+            { id: 458, title: "Agravante por Local", description: "Cometer crime em local de acesso restrito.", penalty: "Aumento de 1/4 na pena", keywords: ["agravante", "local", "restrito", "área"], sectionId: 10 },
+            { id: 459, title: "Agravante por Premeditação", description: "Cometer crime com premeditação.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "premeditação", "planejado", "antecipação"], sectionId: 10 },
+            { id: 460, title: "Agravante por Emboscada", description: "Cometer crime mediante emboscada.", penalty: "Aumento de 1/2 na pena", keywords: ["agravante", "emboscada", "surpresa", "tocaia"], sectionId: 10 },
+            { id: 461, title: "Agravante por Traição", description: "Cometer crime com traição.", penalty: "Aumento de 1/2 na pena", keywords: ["agravante", "traição", "deslealdade", "perfídia"], sectionId: 10 },
+            { id: 462, title: "Agravante por Noite", description: "Cometer crime durante a noite.", penalty: "Aumento de 1/4 na pena", keywords: ["agravante", "noite", "noturno", "escuridão"], sectionId: 10 },
+            { id: 463, title: "Agravante por Concurso", description: "Cometer crime com participação de dois ou mais.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "concurso", "participação", "grupo"], sectionId: 10 },
+            { id: 464, title: "Agravante por Recurso Técnico", description: "Cometer crime valendo-se de recurso técnico.", penalty: "Aumento de 1/4 na pena", keywords: ["agravante", "recurso", "técnico", "meio"], sectionId: 10 },
+            { id: 465, title: "Agravante por Dissimulação", description: "Cometer crime com dissimulação.", penalty: "Aumento de 1/4 na pena", keywords: ["agravante", "dissimulação", "disfarce", "ocultação"], sectionId: 10 },
+            { id: 466, title: "Agravante por Vítima Vulnerável", description: "Cometer crime contra pessoa vulnerável.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "vítima", "vulnerável", "frágil"], sectionId: 10 },
+            { id: 467, title: "Agravante por Motivo Fútil", description: "Cometer crime por motivo fútil.", penalty: "Aumento de 1/3 na pena", keywords: ["agravante", "motivo", "fútil", "banal"], sectionId: 10 },
+            { id: 468, title: "Agravante por Motivo Torpe", description: "Cometer crime por motivo torpe.", penalty: "Aumento de 1/2 na pena", keywords: ["agravante", "motivo", "torpe", "vil"], sectionId: 10 },
+            { id: 469, title: "Atenuante por Confissão", description: "Confessar espontaneamente a autoria do crime.", penalty: "Redução de 1/6 na pena", keywords: ["atenuante", "confissão", "espontânea", "autoria"], sectionId: 10 },
+            { id: 470, title: "Atenuante por Colaboração", description: "Colaborar efetivamente com a investigação.", penalty: "Redução de 1/3 na pena", keywords: ["atenuante", "colaboração", "investigação", "auxílio"], sectionId: 10 },
+            { id: 471, title: "Atenuante por Reparação", description: "Reparar o dano antes do julgamento.", penalty: "Redução de 1/6 na pena", keywords: ["atenuante", "reparação", "dano", "ressarcimento"], sectionId: 10 },
+            { id: 472, title: "Atenuante por Provocação", description: "Agir sob provocação da vítima.", penalty: "Redução de 1/6 na pena", keywords: ["atenuante", "provocação", "vítima", "reação"], sectionId: 10 },
+            { id: 473, title: "Atenuante por Coação", description: "Agir sob coação resistível.", penalty: "Redução de 1/4 na pena", keywords: ["atenuante", "coação", "pressão", "resistível"], sectionId: 10 },
+            { id: 474, title: "Atenuante por Ignorância", description: "Agir com desconhecimento da lei.", penalty: "Redução de 1/6 na pena", keywords: ["atenuante", "ignorância", "lei", "desconhecimento"], sectionId: 10 },
+            { id: 475, title: "Atenuante por Emoção", description: "Agir sob violenta emoção.", penalty: "Redução de 1/6 na pena", keywords: ["atenuante", "emoção", "violenta", "paixão"], sectionId: 10 },
+            { id: 476, title: "Excludente por Legítima Defesa", description: "Agir em legítima defesa própria ou de outrem.", penalty: "Exclusão de pena", keywords: ["excludente", "legítima", "defesa", "própria"], sectionId: 10 },
+            { id: 477, title: "Excludente por Estado de Necessidade", description: "Agir em estado de necessidade.", penalty: "Exclusão de pena", keywords: ["excludente", "estado", "necessidade", "perigo"], sectionId: 10 },
+            { id: 478, title: "Excludente por Estrito Cumprimento", description: "Agir em estrito cumprimento do dever.", penalty: "Exclusão de pena", keywords: ["excludente", "estrito", "cumprimento", "dever"], sectionId: 10 },
+            { id: 479, title: "Excludente por Exercício Regular", description: "Agir em exercício regular de direito.", penalty: "Exclusão de pena", keywords: ["excludente", "exercício", "regular", "direito"], sectionId: 10 },
+            { id: 480, title: "Excludente por Coação Irresistível", description: "Agir sob coação física ou moral irresistível.", penalty: "Exclusão de pena", keywords: ["excludente", "coação", "irresistível", "força"], sectionId: 10 },
+            { id: 481, title: "Excludente por Obediência Hierárquica", description: "Agir em cumprimento de ordem superior não manifestamente ilegal.", penalty: "Exclusão ou redução de pena", keywords: ["excludente", "obediência", "hierárquica", "ordem"], sectionId: 10 },
+            { id: 482, title: "Suspensão Condicional", description: "Suspensão condicional da pena para primário.", penalty: "Suspensão de 2 a 4 anos", keywords: ["suspensão", "condicional", "pena", "primário"], sectionId: 10 },
+            { id: 483, title: "Conversão em Serviço", description: "Conversão de detenção em serviços à comunidade.", penalty: "Serviço comunitário", keywords: ["conversão", "serviço", "comunidade", "alternativa"], sectionId: 10 },
+            { id: 484, title: "Progressão de Regime", description: "Progressão para regime menos severo.", penalty: "Mudança de regime", keywords: ["progressão", "regime", "menos", "severo"], sectionId: 10 },
+            { id: 485, title: "Livramento Condicional", description: "Liberação antecipada com condições.", penalty: "Liberdade condicional", keywords: ["livramento", "condicional", "liberdade", "antecipada"], sectionId: 10 },
+            { id: 486, title: "Reabilitação Criminal", description: "Reabilitação após cumprimento integral.", penalty: "Limpeza de antecedentes", keywords: ["reabilitação", "criminal", "antecedentes", "limpeza"], sectionId: 10 },
+            { id: 487, title: "Prescrição da Pretensão Punitiva", description: "Extinção pelo decurso do prazo prescricional.", penalty: "Extinção de punibilidade", keywords: ["prescrição", "pretensão", "punitiva", "prazo"], sectionId: 10 },
+            { id: 488, title: "Prescrição da Pretensão Executória", description: "Extinção da execução pelo decurso do prazo.", penalty: "Extinção de execução", keywords: ["prescrição", "executória", "execução", "prazo"], sectionId: 10 },
+            { id: 489, title: "Perdão Judicial", description: "Perdão concedido pelo juiz em casos excepcionais.", penalty: "Extinção de punibilidade", keywords: ["perdão", "judicial", "excepcional", "extinção"], sectionId: 10 },
+            { id: 490, title: "Anistia", description: "Anistia concedida por ato legislativo.", penalty: "Extinção de punibilidade", keywords: ["anistia", "legislativo", "extinção", "perdão"], sectionId: 10 },
+            { id: 491, title: "Indulto", description: "Indulto concedido por ato executivo.", penalty: "Extinção ou redução de pena", keywords: ["indulto", "executivo", "perdão", "clemência"], sectionId: 10 },
+            { id: 492, title: "Graça", description: "Graça individual concedida.", penalty: "Extinção de pena individual", keywords: ["graça", "individual", "clemência", "perdão"], sectionId: 10 },
+            { id: 493, title: "Medida de Segurança", description: "Aplicação de medida de segurança a inimputável.", penalty: "Tratamento compulsório", keywords: ["medida", "segurança", "inimputável", "tratamento"], sectionId: 10 },
+            { id: 494, title: "Internação Compulsória", description: "Internação em estabelecimento adequado.", penalty: "Internação", keywords: ["internação", "compulsória", "estabelecimento", "tratamento"], sectionId: 10 },
+            { id: 495, title: "Tratamento Ambulatorial", description: "Tratamento ambulatorial como alternativa.", penalty: "Tratamento externo", keywords: ["tratamento", "ambulatorial", "externo", "saúde"], sectionId: 10 },
+            { id: 496, title: "Perda de Patente", description: "Perda de patente ou posto por condenação.", penalty: "Perda de graduação", keywords: ["perda", "patente", "posto", "graduação"], sectionId: 10 },
+            { id: 497, title: "Indignidade para Oficialato", description: "Declaração de indignidade para o oficialato.", penalty: "Impedimento permanente", keywords: ["indignidade", "oficialato", "impedimento", "permanente"], sectionId: 10 },
+            { id: 498, title: "Exclusão do Serviço Ativo", description: "Exclusão do serviço ativo das forças.", penalty: "Desligamento", keywords: ["exclusão", "serviço", "ativo", "desligamento"], sectionId: 10 },
+            { id: 499, title: "Perda de Direitos", description: "Perda de direitos decorrentes de condenação.", penalty: "Cassação de direitos", keywords: ["perda", "direitos", "cassação", "condenação"], sectionId: 10 },
+            { id: 500, title: "Efeitos da Condenação", description: "Efeitos civis e administrativos da condenação criminal.", penalty: "Efeitos diversos", keywords: ["efeitos", "condenação", "civis", "administrativos"], sectionId: 10 },
+        ];
+
+        // ============= FUNÇÕES AUXILIARES =============
+        function getArticlesBySection(sectionId) {
+            return articles.filter(article => article.sectionId === sectionId);
+        }
+
+        function searchArticles(query) {
+            const lowerQuery = query.toLowerCase().trim();
+            if (!lowerQuery) return [];
+            
+            return articles.filter(article => {
+                const matchesTitle = article.title.toLowerCase().includes(lowerQuery);
+                const matchesDescription = article.description.toLowerCase().includes(lowerQuery);
+                const matchesKeywords = article.keywords.some(kw => kw.toLowerCase().includes(lowerQuery));
+                const matchesId = article.id.toString() === lowerQuery;
+                
+                return matchesTitle || matchesDescription || matchesKeywords || matchesId;
+            });
+        }
+
+        // ============= ESTADO DA APLICAÇÃO =============
+        let selectedSection = null;
+        let selectedArticle = null;
+        let expandedSections = new Set();
+
+        // ============= ELEMENTOS DOM =============
+        const searchInput = document.getElementById('searchInput');
+        const searchResultsCount = document.getElementById('searchResultsCount');
+        const sectionsNav = document.getElementById('sectionsNav');
+        const mainContent = document.getElementById('mainContent');
+        const welcomeCard = document.getElementById('welcomeCard');
+        const articlesList = document.getElementById('articlesList');
+        const articleDetail = document.getElementById('articleDetail');
+        const noResults = document.getElementById('noResults');
+
+        // ============= FUNÇÕES DE RENDERIZAÇÃO =============
+        function renderSections() {
+            sectionsNav.innerHTML = sections.map(section => `
+                <div>
+                    <button 
+                        class="section-btn ${selectedSection === section.id ? 'active' : ''}" 
+                        data-section-id="${section.id}"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            ${expandedSections.has(section.id) 
+                                ? '<path d="m6 9 6 6 6-6"/>' 
+                                : '<path d="m9 18 6-6-6-6"/>'}
+                        </svg>
+                        <span>${section.title}</span>
+                    </button>
+                    ${expandedSections.has(section.id) 
+                        ? `<p class="section-description">${section.description}</p>` 
+                        : ''}
+                </div>
+            `).join('');
+
+            // Add event listeners
+            sectionsNav.querySelectorAll('.section-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionId = parseInt(btn.dataset.sectionId);
+                    toggleSection(sectionId);
+                });
+            });
+        }
+
+        function toggleSection(sectionId) {
+            if (expandedSections.has(sectionId)) {
+                expandedSections.delete(sectionId);
+            } else {
+                expandedSections.add(sectionId);
+            }
+            selectedSection = sectionId;
+            selectedArticle = null;
+            searchInput.value = '';
+            renderSections();
+            renderMainContent();
+        }
+
+        function renderArticlesList(articlesToShow) {
+            articlesList.innerHTML = articlesToShow.map((article, index) => `
+                <button class="article-card" data-article-id="${article.id}" style="animation-delay: ${index * 30}ms">
+                    <div class="article-card-content">
+                        <div class="article-card-main">
+                            <div class="article-header">
+                                <span class="article-badge">Art. ${article.id}</span>
+                                <h3 class="article-title">${article.title}</h3>
+                            </div>
+                            <p class="article-description">${article.description}</p>
+                        </div>
+                        <svg class="article-card-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </div>
+                </button>
+            `).join('');
+
+            // Add event listeners
+            articlesList.querySelectorAll('.article-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const articleId = parseInt(card.dataset.articleId);
+                    const article = articles.find(a => a.id === articleId);
+                    if (article) {
+                        showArticleDetail(article);
+                    }
+                });
+            });
+        }
+
+        function showArticleDetail(article) {
+            selectedArticle = article;
+            renderMainContent();
+        }
+
+        function renderArticleDetail() {
+            articleDetail.innerHTML = `
+                <button class="back-btn" id="backBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 19-7-7 7-7"/>
+                        <path d="M19 12H5"/>
+                    </svg>
+                    Voltar à lista
+                </button>
+                <div class="article-detail-header">
+                    <span class="article-detail-badge">Artigo ${selectedArticle.id}</span>
+                    <h2 class="article-detail-title font-serif">${selectedArticle.title}</h2>
+                </div>
+                <div class="article-section">
+                    <h3 class="article-section-label">Descrição</h3>
+                    <p class="article-section-content">${selectedArticle.description}</p>
+                </div>
+                <div class="article-section">
+                    <h3 class="article-section-label">Penalidade</h3>
+                    <p class="article-penalty">${selectedArticle.penalty}</p>
+                </div>
+                <div class="article-section">
+                    <h3 class="article-section-label">Palavras-chave</h3>
+                    <div class="keywords-list">
+                        ${selectedArticle.keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('backBtn').addEventListener('click', () => {
+                selectedArticle = null;
+                renderMainContent();
+            });
+        }
+
+        function renderMainContent() {
+            const searchQuery = searchInput.value.trim();
+            
+            // Hide all
+            welcomeCard.classList.add('hidden');
+            articlesList.classList.add('hidden');
+            articleDetail.classList.add('hidden');
+            noResults.classList.add('hidden');
+
+            if (selectedArticle) {
+                articleDetail.classList.remove('hidden');
+                renderArticleDetail();
+                return;
+            }
+
+            if (searchQuery) {
+                const results = searchArticles(searchQuery);
+                if (results.length > 0) {
+                    articlesList.classList.remove('hidden');
+                    renderArticlesList(results);
+                } else {
+                    noResults.classList.remove('hidden');
+                    noResults.innerHTML = `<p>Nenhum artigo encontrado para "${searchQuery}"</p>`;
+                }
+                return;
+            }
+
+            if (selectedSection) {
+                const sectionArticles = getArticlesBySection(selectedSection);
+                articlesList.classList.remove('hidden');
+                renderArticlesList(sectionArticles);
+                return;
+            }
+
+            welcomeCard.classList.remove('hidden');
+        }
+
+        // ============= EVENT LISTENERS =============
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            
+            if (query) {
+                const results = searchArticles(query);
+                searchResultsCount.textContent = `${results.length} resultado(s) encontrado(s)`;
+                searchResultsCount.classList.remove('hidden');
+            } else {
+                searchResultsCount.classList.add('hidden');
+            }
+            
+            selectedArticle = null;
+            renderMainContent();
+        });
+
+        // ============= INICIALIZAÇÃO =============
+        renderSections();
+        renderMainContent();
+    </script>
+</body>
+</html>
